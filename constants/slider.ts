@@ -1,5 +1,3 @@
-import { images } from "./images";
-
 const slider = [
    {
       url: "/tap1.jpg",
