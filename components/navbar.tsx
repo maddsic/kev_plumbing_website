@@ -1,48 +1,25 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { Facebook, Instagram, Mail, PhoneCall, Twitter } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/logo .png";
-import { Banner } from "./Banner/banner";
+import { navLinks } from "@/constants/navlinks";
+import { Facebook, Instagram, Mail, PhoneCall, Twitter } from "lucide-react";
 
 const socialIcons = [
    {
       icon: Facebook,
       href: "/facebook.com",
-      color: "bg-blue-500",
+      bgColor: "bg-blue-500",
    },
    {
       icon: Twitter,
       href: "/twitter.com",
-      color: "bg-blue-400",
+      bgColor: "bg-blue-900",
    },
    {
       icon: Instagram,
       href: "/instagram.com",
-      color: "bg-red-500",
-   },
-];
-
-const navLinks = [
-   {
-      label: "HOME",
-      href: "/",
-   },
-   {
-      label: "ABOUT US",
-      href: "/about",
-   },
-   {
-      label: "SERVICES",
-      href: "/services",
-   },
-   {
-      label: "PROJECTS",
-      href: "/projects",
-   },
-   {
-      label: "CONTACTS",
-      href: "/contact",
+      bgColor: "bg-red-500",
    },
 ];
 
@@ -62,8 +39,8 @@ const Navbar = () => {
                      <Link key={iconIndex} href={social.href}>
                         <div
                            className={cn(
-                              "w-8 h-8 text-white bg-red-500 rounded-full flex items-center justify-center p-2",
-                              social.color
+                              "w-8 h-8 text-white rounded-full flex items-center justify-center p-2 border",
+                              social.bgColor
                            )}
                         >
                            <social.icon />
@@ -127,7 +104,7 @@ const Navbar = () => {
                      <li>
                         <Link
                            key={linkIndex}
-                           className="link font-bold hover:opacity-90 transition ease-in-out delay-150"
+                           className="link uppercase text font-bold hover:opacity-90 transition ease-in-out delay-150"
                            href={link.href}
                         >
                            {link.label}

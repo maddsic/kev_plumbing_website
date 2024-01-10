@@ -1,3 +1,4 @@
+import Services from "@/components/Service/service";
 import { Banner } from "../components/Banner/banner";
 import Navbar from "../components/navbar";
 
@@ -7,7 +8,8 @@ export default function Home() {
          <Navbar />
          <Banner />
 
-         <h1>hi</h1>
+         {/* section 1 about us */}
+         <Services />
       </main>
    );
 }
