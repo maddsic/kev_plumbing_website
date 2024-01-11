@@ -9,14 +9,14 @@ import { Button } from "../ui/button";
 export const Banner = () => {
    const [currentSlide, setCurrentSlide] = useState(0);
 
-   useEffect(() => {
-      const time = setTimeout(() => {
-         setCurrentSlide(prevSlide =>
-            prevSlide === slider.length - 1 ? 0 : prevSlide + 1
-         );
-      }, 1000);
-      return () => clearTimeout(time);
-   }, [currentSlide]);
+   // useEffect(() => {
+   //    const time = setTimeout(() => {
+   //       setCurrentSlide(prevSlide =>
+   //          prevSlide === slider.length - 1 ? 0 : prevSlide + 1
+   //       );
+   //    }, 20000);
+   //    return () => clearTimeout(time);
+   // }, [currentSlide]);
 
    const bgImageStyle = {
       backgroundImage: `url(${slider[currentSlide].url})`,
@@ -27,13 +27,11 @@ export const Banner = () => {
       transition: " 0.5s ease-in-out",
    };
 
-   console.log("currentSlide:", currentSlide);
-
    return (
       <div className="relative w-full h-[680px] overflow-hidden">
          <div style={bgImageStyle} />
          {/* BANNER HIGHLIGHT */}
-         <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-24 z-50 text-white ">
+         <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-24 z-50 text-white">
             <h1 className="text-5xl font-extrabold mb-5 tracking-wide">
                {slider[currentSlide]?.title}
             </h1>
