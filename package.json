@@ -17,6 +17,7 @@
       "lucide-react": "^0.303.0",
       "next": "14.0.4",
       "react": "^18",
+      "react-countup": "^6.5.0",
       "react-dom": "^18",
       "react-slick": "^0.29.0",
       "slick-carousel": "^1.8.1",
