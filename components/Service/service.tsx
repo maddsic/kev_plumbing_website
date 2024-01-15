@@ -1,7 +1,5 @@
 "use client";
 
-// import { AppWrapper } from "@/wrappers";
-// import { Heading } from "../heading";
 import Image from "next/image";
 import { serviceData } from "../../constants/services";
 import { motion } from "framer-motion";
@@ -19,11 +17,11 @@ const Services = () => {
                <br /> means <span className="text-blue-700">Good Business</span>
             </h2>
 
-            <div className="flex justify-center items-start flex-wrap mt-[2rem] container">
+            <div className="flex justify-center items-start flex-wrap mt-[1rem] container">
                {serviceData.map((service, sIndex) => (
                   <motion.div
                      key={sIndex}
-                     className="w-[250px] flex justify-start items-start flex-col m-[2rem]"
+                     className="w-[250px] flex justify-start items-start flex-col m-[1rem]"
                      whileInView={{ opacity: 1 }}
                      whileHover={{ scale: 1.1 }}
                      transition={{ duration: 0.5, type: "Inertia" }}

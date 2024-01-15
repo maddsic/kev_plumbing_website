@@ -43,5 +43,4 @@ export const serviceData = [
       description:
          "Discover the magical wonders hidden within the lush green forest.",
    },
-   // Add more objects as needed
 ];

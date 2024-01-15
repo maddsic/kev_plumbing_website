@@ -27,11 +27,11 @@ const chooseData = [
 
 const Choose = () => {
    return (
-      <div className="w-full relative h-[450px] border bg-sky-900 bg-[url('/tap.jpg')] bg-cover bg-fixed">
+      <main className="relative min-h-[450px] border bg-sky-900 bg-[url('/tap.jpg')] bg-cover bg-fixed">
          {/* BACKGROUND COLOR @GRAY */}
          <div className="absolute bg-[#10162199] top-0 left-0 right-0 bottom-0"></div>
-         <motion.div
-            className="w-[60%] mx-auto  absolute top-0 left-0 right-0 bottom-0 flex flex-col p-5 mt-8"
+         <motion.section
+            className="max-w-[60%] mx-auto absolute top-0 left-0 right-0 bottom-0 flex flex-col p-5 mt-8"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
@@ -39,9 +39,8 @@ const Choose = () => {
                title="Plumbing is what we do"
                classNames="text-white font-bold"
             />
-            <div className="flex justify-center">
-               <Heading title="Why Choose Us" classNames="text-white" />
-            </div>
+            <Heading title="Why Choose Us" classNames="text-white" />
+            {/*  */}
             <div className="flex items-center justify-center gap-x-3 mx-auto p-5 mt-5">
                {chooseData.map((choose, index) => (
                   <div
@@ -61,8 +60,8 @@ const Choose = () => {
                ))}
             </div>
             ;
-         </motion.div>
-      </div>
+         </motion.section>
+      </main>
    );
 };
 
