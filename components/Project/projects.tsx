@@ -5,13 +5,14 @@ import { StyledHeading } from "../styledHeading";
 import { projectData } from "../../constants/projects";
 import { motion } from "framer-motion";
 import { Counter } from "../counter";
+import { Button } from "../ui/button";
 
 const Project = () => {
    return (
-      <section className="app__container relative">
+      <section className="app__container ">
          {/* <div className="absolute bg-[#06080be3] top-[80%] left-0 right-0 bottom-[-40%]"></div> */}
          <motion.main
-            className="container app__wrapper absolute top-0 left-0 right-0 bottom-0 z-50 my-auto "
+            className="container app__wrapper my-auto"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 2 }}
          >
@@ -23,7 +24,7 @@ const Project = () => {
                </h2>
             </div>
 
-            <div className="flex justify-center items-start flex-wrap mt-[1rem] max-w-[80%] mx-auto">
+            <div className="flex justify-center items-start flex-wrap mt-[1rem] max-w-[90%] mx-auto">
                {projectData.map((project, sIndex) => (
                   <motion.div
                      key={sIndex}
@@ -42,23 +43,17 @@ const Project = () => {
                   </motion.div>
                ))}
             </div>
-            <div className="mt-5 flex justify-evenly items-center">
-               <div className="border-l-2 border-t-4 border-b-4 rounded-t-full max-w-96 p-3">
-                  <Counter number={3500} title="Toilets Installed" />
-               </div>
-               <div className="border-l-2 border-t-4 border-b-4 rounded-t-full p-3">
-                  <Counter number={1200} title="Heaters Repaired" />
-               </div>
-               <div className="border-l-2 border-t-4 border-b-4 rounded-t-full p-3">
-                  <Counter number={2550} title="Burst Mains Repaired" />
-               </div>
-               <div className="border-l-2 border-t-4 border-b-4 rounded-t-full p-3">
-                  <Counter number={3000} title="Leaky Faucets Fixed" />
-               </div>
+
+            <div className="flex justify-center mx-auto">
+               <Button
+                  variant="ghost"
+                  className="bg-blue-900 text-white mt-8 font-semibold rounded"
+                  size="lg"
+               >
+                  Explore More
+               </Button>
             </div>
          </motion.main>
-
-         <div className="absolute bg-[url('/counterBg1.jpg')] top-[50%] left-0 right-0 bottom-28"></div>
       </section>
    );
 };
