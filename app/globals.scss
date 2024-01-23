@@ -10,6 +10,9 @@
    .app-flex-col {
       @apply flex items-center justify-center flex-col;
    }
+   .gray-text {
+      @apply text-gray-500;
+   }
 }
 
 :root {
@@ -19,13 +22,23 @@
    --gray-color: #6b7688;
 }
 
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   scroll-behavior: smooth;
+}
+
+body {
+   @apply overflow-x-hidden;
+}
+
 .app__container {
-   width: 100;
-   min-height: 100vh;
+   @apply min-h-[100vh];
 }
 
 .section__container {
-   min-height: 50vh;
+   @apply min-h-[80vh];
 }
 
 .app__wrapper {
@@ -35,25 +48,6 @@
 
    @media screen and (max-width: 450px) {
       padding: 4rem 1rem 2rem;
-   }
-}
-
-.app__navigation-dot {
-   width: 10px;
-   height: 10px;
-   border-radius: 50%;
-   background-color: #cbcbcb;
-   margin: 0.5rem;
-
-   transition: background-color 0.2s ease-in-out;
-
-   &:hover {
-      background-color: var(--secondary-color);
-   }
-
-   @media screen and (min-width: 2000px) {
-      width: 20px;
-      height: 20px;
    }
 }
 

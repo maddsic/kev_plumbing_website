@@ -27,11 +27,11 @@ const chooseData = [
 
 const Choose = () => {
    return (
-      <main className="relative min-h-[450px] border bg-sky-900 bg-[url('/tap.jpg')] bg-cover bg-fixed">
+      <main className="relative overflow-hidden min-h-[450px] border bg-[url('/bg2.jpg')] bg-fixed bg-cover">
          {/* BACKGROUND COLOR @GRAY */}
          <div className="absolute bg-[#10162199] top-0 left-0 right-0 bottom-0"></div>
          <motion.section
-            className="max-w-[60%] mx-auto absolute top-0 left-0 right-0 bottom-0 flex flex-col p-5 mt-8"
+            className="mx-auto absolute top-0 left-0 right-0 bottom-0 flex flex-col p-5 mt-8 lg:max-w-[80%]"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
@@ -41,13 +41,13 @@ const Choose = () => {
             />
             <Heading title="Why Choose Us" classNames="text-white" />
             {/*  */}
-            <div className="flex items-center justify-center gap-x-3 mx-auto p-5 mt-5">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 mx-auto p-5 mt-5 ">
                {chooseData.map((choose, index) => (
                   <div
                      key={index}
-                     className="group hover:-translate-y-6 transition duration-1000 relative w-[320px] rounded-[20px] bg-[#1667ae] px-10 py-8 text-center"
+                     className="mb-3 group hover:-translate-y-6 transition duration-1000 relative max-w-[320px] rounded-[20px] bg-[#1667ae] px-10 py-8 text-center shadow-2xl"
                   >
-                     <div className="group-hover:bg-black flex justify-center items-center absolute top-[-30px] left-[40%] z-20 rounded-full bg-[#2296f9] p-4">
+                     <div className="group-hover:bg-black flex justify-center items-center absolute -top-[30px] left-[40%] z-20 rounded-full bg-[#2296f9] p-4">
                         <choose.icon size={34} color="white" className="" />
                      </div>
                      <h2 className="mb-3 mt-5 text-white font-bold tracking-wide">

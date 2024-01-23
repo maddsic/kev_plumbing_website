@@ -31,4 +31,29 @@ export const projectData = [
       title: "Water Line Repair",
       description: "The dazzling lights of the cityscape at night.",
    },
+   {
+      image: "/plumber2.jpg",
+      title: "Water Line Repair",
+      description: "The dazzling lights of the cityscape at night.",
+   },
+   {
+      image: "/plumber2.jpg",
+      title: "Water Line Repair",
+      description: "The dazzling lights of the cityscape at night.",
+   },
+   {
+      image: "/plumber1.jpg",
+      title: "Bathroom Remodeling",
+      description: "A breathtaking view of the sunset over the mountains.",
+   },
+   {
+      image: "/plumber2.jpg",
+      title: "Water Line Repair",
+      description: "The dazzling lights of the cityscape at night.",
+   },
+   {
+      image: "/plumber2.jpg",
+      title: "Water Line Repair",
+      description: "The dazzling lights of the cityscape at night.",
+   },
 ];
