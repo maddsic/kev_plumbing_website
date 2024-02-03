@@ -3,13 +3,33 @@
 import Image from "next/image";
 import { StyledHeading } from "../styledHeading";
 import { projectData } from "../../constants/projects";
-import { motion } from "framer-motion";
-import { Counter } from "../counter";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { Button } from "../ui/button";
+import { useEffect, useRef } from "react";
 
 const Project = () => {
+   const ref = useRef(null);
+   const isInView = useInView(ref, { once: true, amount: 0.09 });
+   const mainControls = useAnimation();
+
+   const checkIsInView = () => {
+      console.log("Projects in view");
+      if (isInView) {
+         mainControls.start("visible");
+      }
+   };
+
+   useEffect(() => {
+      checkIsInView();
+   }, [isInView]);
+
+   const productVariants = {
+      hidden: { opacity: 0, x: -75 },
+      visible: { opacity: 1, x: 0 },
+   };
+
    return (
-      <section className="app__container ">
+      <section id="projects" className="app__container ">
          {/* <div className="absolute bg-[#06080be3] top-[80%] left-0 right-0 bottom-[-40%]"></div> */}
          <motion.main
             className="container app__wrapper my-auto"
@@ -25,9 +45,21 @@ const Project = () => {
             </div>
 
             <div className="flex justify-center items-start flex-wrap mt-[1rem] max-w-[90%] mx-auto">
-               {projectData.map((project, sIndex) => (
+               {projectData.map((project, productIndex) => (
                   <motion.div
-                     key={sIndex}
+                     key={productIndex}
+                     // variants={productVariants}
+                     // initial="hidden"
+                     // animate={mainControls}
+                     // transition={{
+                     //    duration: 0.5,
+                     //    delay: productIndex * 0.3,
+                     //    ease: "easeOut",
+                     // }}
+                     // whileHover={{
+                     //    scale: 1.2,
+                     //    transition: { duration: 0.4 },
+                     // }}
                      className="w-[250px] flex justify-start items-start flex-col m-[1rem]"
                      whileInView={{ opacity: 1 }}
                      whileHover={{ scale: 1.1 }}
@@ -36,9 +68,10 @@ const Project = () => {
                      <Image
                         alt={project.description}
                         src={project.image}
-                        className="w-[100%] max-h-[190px] rounded-[20px] object-cover"
+                        className="w-[100%] h-[190px] rounded-[20px] object-cover"
                         width={100}
                         height={190}
+                        onClick={() => window.open(project.image)}
                      />
                   </motion.div>
                ))}

@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 const Services = () => {
    return (
-      <div className="app__container">
+      <div id="services" className="app__container">
          <motion.div
-            className="app__wrapper app-flex-row my-auto"
+            className="app__wrapper app-flex-row mx-auto"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
             <h2 className="head-text app__about">
-               I know that <span className="text-blue-700">Good Service</span>{" "}
+               I know that <span className="text-blue-700">Good Service</span>
                <br /> means <span className="text-blue-700">Good Business</span>
             </h2>
 
@@ -21,7 +21,7 @@ const Services = () => {
                {serviceData.map((service, sIndex) => (
                   <motion.div
                      key={sIndex}
-                     className="w-[250px] flex justify-start items-start flex-col m-[1rem]"
+                     className="w-full md:w-1/3 lg:w-1/4 xl:w-1/5 flex justify-start items-start flex-col m-[1rem]"
                      whileInView={{ opacity: 1 }}
                      whileHover={{ scale: 1.1 }}
                      transition={{ duration: 0.5, type: "Inertia" }}
@@ -29,7 +29,7 @@ const Services = () => {
                      <Image
                         alt={service.description}
                         src={service.image}
-                        className="w-[100%] h-[190px] rounded-[20px] object-cover"
+                        className="w-[100%] h-[190px] rounded-[20px] object-cover repeat-0"
                         width={100}
                         height={190}
                      />

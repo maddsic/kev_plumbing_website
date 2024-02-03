@@ -28,30 +28,24 @@ export const Banner = () => {
    };
 
    return (
-      <div className="relative w-full h-[680px] overflow-hidden">
+      <div className="relative w-full h-[400px] lg:h-[680px] overflow-hidden">
          <div style={bgImageStyle} />
          {/* BANNER HIGHLIGHT */}
          <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-24 z-50 text-white">
-            <h1 className="text-5xl font-extrabold mb-5 tracking-wide">
+            <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide">
                {slider[currentSlide]?.title}
             </h1>
 
-            <h2 className="text-2xl font-bold mb-10 text-muted">
+            <h2 className="text-lg lg:text-2xl font-bold mb-5 lg:mb-10 text-muted">
                {slider[currentSlide]?.subtitle}
             </h2>
 
             {/* button */}
             <div className="flex gap-5 ">
-               <Button
-                  size="lg"
-                  className="py-6 text-lg font-bold bg-blue-950 rounded"
-               >
+               <Button size="lg" className="py-6 text-lg font-bold bg-blue-950">
                   Contact US
                </Button>
-               <Button
-                  size="lg"
-                  className="py-6 text-lg font-bold bg-blue-600 rounded"
-               >
+               <Button size="lg" className="py-6 text-lg font-bold bg-blue-600">
                   Services
                </Button>
             </div>
