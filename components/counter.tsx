@@ -13,9 +13,9 @@ export const Counter = ({ number, title, suffix }: CounterProps) => {
             duration={10}
             end={number}
             suffix={suffix}
-            className="text-5xl text-black my-3 font-bold"
+            className="text-4xl lg:text-5xl text-black my-3 font-bold"
          />
-         <p className="gray-text">{title}</p>
+         <p className="font-semibold lg:gray-text">{title}</p>
       </div>
    );
 };

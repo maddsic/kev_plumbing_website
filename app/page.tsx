@@ -1,3 +1,5 @@
+"use client";
+
 import Services from "@/components/Service/service";
 import { Banner } from "../components/Banner/banner";
 import Navbar from "../components/navbar";
@@ -6,32 +8,27 @@ import Project from "@/components/Project/projects";
 import Testimonials from "@/components/Testimonial";
 import About from "@/components/About";
 import SectionSeperator from "@/components/seperator";
+import ContactPage from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
    return (
-      <main className="min-h-screen ">
+      <main className="min-h-screen">
          <Navbar />
          <Banner />
-         {/* About us Section */}
          <About />
-         <SectionSeperator
-            headerTitle="Quality service is our gaurantee"
-            // subtitle="Experience seamless plumbing solutions tailored to your needs. Our expert plumbers deliver precision and reliability, ensuring your home's plumbing systems function flawlessly. Trust us for efficient repairs, installations, and maintenance, backed by years of expertise in the industry"
-         />
-         {/* section 1 about us */}
+         <SectionSeperator headerTitle="Quality service is our gaurantee" />
          <Services />
          <Choose />
+         <Testimonials />
+         <SectionSeperator headerTitle="Experience seamless plumbing solutions tailored to your needs." />
          <Project />
          <SectionSeperator
-            headerTitle="Experience seamless plumbing solutions tailored to your needs."
-            // subtitle="Experience seamless plumbing solutions tailored to your needs. Our expert plumbers deliver precision and reliability, ensuring your home's plumbing systems function flawlessly. Trust us for efficient repairs, installations, and maintenance, backed by years of expertise in the industry"
+            headerTitle="Contact Us"
+            classNames="bg-[url('/bg3.jpg')] lg:min-h-[400px]"
          />
-         <Testimonials />
-         <SectionSeperator
-            headerTitle="Experience seamless plumbing solutions tailored to your needs."
-            classNames="bg-[url('/bg3.jpg')]"
-            // subtitle="Experience seamless plumbing solutions tailored to your needs. Our expert plumbers deliver precision and reliability, ensuring your home's plumbing systems function flawlessly. Trust us for efficient repairs, installations, and maintenance, backed by years of expertise in the industry"
-         />
+         <ContactPage />
+         <Footer />
       </main>
    );
 }

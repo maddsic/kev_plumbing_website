@@ -11,9 +11,7 @@ interface HeadingProps {
 export const Heading = ({ title, description, classNames }: HeadingProps) => {
    return (
       <div className="px-4 lg:px-8 text-center">
-         <div
-            className={cn("head-text my-2 text-blue-800 font-thin", classNames)}
-         >
+         <div className={cn("lg:head-text my-2 text-blue-800", classNames)}>
             {title}
          </div>
          {description && (

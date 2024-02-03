@@ -27,7 +27,10 @@ const chooseData = [
 
 const Choose = () => {
    return (
-      <main className="relative overflow-hidden min-h-[450px] border bg-[url('/bg2.jpg')] bg-fixed bg-cover">
+      <main
+         id="choose"
+         className="relative overflow-hidden min-h-[450px] border bg-[url('/bg2.jpg')] bg-fixed bg-cover"
+      >
          {/* BACKGROUND COLOR @GRAY */}
          <div className="absolute bg-[#10162199] top-0 left-0 right-0 bottom-0"></div>
          <motion.section

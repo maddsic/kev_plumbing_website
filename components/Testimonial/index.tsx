@@ -7,54 +7,10 @@ import { Heading } from "../heading";
 import { testimonialData } from "@/constants/testimonials";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Quote, Star } from "lucide-react";
-import {
-   Carousel,
-   CarouselContent,
-   CarouselItem,
-   CarouselNext,
-   CarouselPrevious,
-} from "@/components/ui/carousel";
-import Slider from "react-slick";
 
 const Testimonials = () => {
-   var settings = {
-      dots: true,
-      infinite: true,
-      autoplay: true,
-      speed: 500,
-      autoplaySpeed: 2000,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      cssEase: "linear",
-      // responsive: [
-      //    {
-      //       breakpoint: 1024,
-      //       settings: {
-      //          slidesToShow: 3,
-      //          slidesToScroll: 3,
-      //          infinite: true,
-      //          dots: true,
-      //       },
-      //    },
-      //    {
-      //       breakpoint: 600,
-      //       settings: {
-      //          slidesToShow: 2,
-      //          slidesToScroll: 2,
-      //          initialSlide: 2,
-      //       },
-      //    },
-      //    {
-      //       breakpoint: 480,
-      //       settings: {
-      //          slidesToShow: 1,
-      //          slidesToScroll: 1,
-      //       },
-      //    },
-      // ],
-   };
    return (
-      <main className="section__container my-auto">
+      <main id="testimonials" className="section__container my-auto">
          <motion.section
             className="app__wrapper max-w-[80%] mx-auto text-center my-auto"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}

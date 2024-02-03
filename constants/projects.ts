@@ -1,16 +1,16 @@
 export const projectData = [
    {
-      image: "/plumber1.jpg",
+      image: "/sink.jpeg",
       title: "Faucet Repair & Installation",
       description: "A breathtaking view of the sunset over the mountains.",
    },
    {
-      image: "/plumber2.jpg",
+      image: "/drawer.jpeg",
       title: "Leak Repairs and Detection",
       description: "The dazzling lights of the cityscape at night.",
    },
    {
-      image: "/plumber3.jpg",
+      image: "/toilet.jpeg",
       title: "Water Heater Installations & repairs",
       description:
          "Discover the magical wonders hidden within the lush green forest.",
