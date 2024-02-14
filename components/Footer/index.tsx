@@ -12,8 +12,8 @@ import OpeningHours from "../openingHours";
 const Footer = () => {
    return (
       <main className="app__container flex flex-col relative bg-[#080f23] text-white">
-         <div className="app__wrapper  relative border-b-2 border-b-gray-800">
-            <section className="grid lg:grid-cols-4 lg:gap-x-20 lg:max-w-[90%] mx-auto my-auto lg:mt-24 p-10 relative z-0">
+         <div className="app__wrapper relative border-b-2 border-b-gray-800">
+            <section className="grid lg:grid-cols-4 gap-y-5 lg:gap-x-20 lg:max-w-[90%] mx-auto mt-0 md:mt-24 p-3 relative z-0">
                {/* ABOUT US */}
                <AboutFooter />
                <ContactFooter />

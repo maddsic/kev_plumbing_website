@@ -29,7 +29,7 @@ const Choose = () => {
    return (
       <main
          id="choose"
-         className="relative overflow-hidden min-h-[450px] border bg-[url('/bg2.jpg')] bg-fixed bg-cover"
+         className="relative overflow-hidden min-h-[900px] md:min-h-[700px] lg:min-h-[450px] border bg-[url('/bg2.jpg')] bg-fixed bg-cover"
       >
          {/* BACKGROUND COLOR @GRAY */}
          <div className="absolute bg-[#10162199] top-0 left-0 right-0 bottom-0"></div>
@@ -44,7 +44,7 @@ const Choose = () => {
             />
             <Heading title="Why Choose Us" classNames="text-white" />
             {/*  */}
-            <div className="flex flex-wrap items-center justify-center gap-x-3 mx-auto p-5 mt-5 ">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-5 mx-auto p-5 mt-5 ">
                {chooseData.map((choose, index) => (
                   <div
                      key={index}

@@ -8,12 +8,12 @@ import {
 
 const ContactFooter = () => {
    return (
-      <div className="relative">
+      <div className="relative mt-5 md:mt-0">
          <h2 className="uppercase text-2xl font-bold underline underline-offset-[14px] decoration-red-700 decoration-4">
             contact us
          </h2>
 
-         <section className="pt-14">
+         <section className="py-8 lg:py-14">
             <div className="flex gap-x-3 mb-3 border-b-2 border-b-gray-800 group">
                <div className="icon ">
                   <MdOutlineLocationOn

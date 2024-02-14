@@ -19,7 +19,7 @@ const QuickLinks = () => {
          <h2 className="uppercase text-2xl font-bold underline underline-offset-[14px] decoration-red-700 decoration-4">
             quick links
          </h2>
-         <section className="py-14">
+         <section className="py-8 md:py-14">
             {links.map((link, linkIndex) => (
                <div
                   key={linkIndex}

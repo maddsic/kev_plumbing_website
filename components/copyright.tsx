@@ -2,8 +2,8 @@ import React from "react";
 
 const Copyright = () => {
    return (
-      <section className="w-[90%] mx-auto p-14">
-         <div className="flex justify-between items-center">
+      <section className="max-w-full lg:w-[90%] mx-auto p-14">
+         <div className="flex flex-col-reverse gap-y-2 md:flex md:flex-row md:justify-between items-center">
             <div className="group">
                <p className="text-gray-500 text-lg group-hover:text-white transition-all duration-1000 ease-in-out">
                   Copyright &copy;. All Rights Reserved

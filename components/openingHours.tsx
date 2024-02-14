@@ -7,7 +7,7 @@ const OpeningHours = () => {
          <h2 className="uppercase text-2xl font-bold underline underline-offset-[14px] decoration-red-700 decoration-4">
             opening hours
          </h2>
-         <section className="py-14">
+         <section className="py-8 md:py-14">
             <div className="flex items-center gap-x-5 mb-2 border-b-2 border-b-gray-800 group">
                <div className="icon text-red-500 group-hover:text-white transition-all duration-1000 ease-in-out mb-3">
                   <MdAccessTime size={40} />
