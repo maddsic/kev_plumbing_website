@@ -44,14 +44,14 @@ const list = [
 
 const About = () => {
    return (
-      <main id="about" className="pb-8 px-4 xs:px-6 sm:px-16 md:px-24">
+      <main id="about" className="pb-8 px-4 xs:px-6 sm:px-16 md:px-24 mt-10">
          <motion.section
             className=""
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
             {/* CONTENT */}
-            <div className="lg:flex justify-around py-14 gap-x-20 max-w-[80%] mx-auto">
+            <div className="lg:flex justify-around  gap-x-20 max-w-[80%] mx-auto ">
                {/* ASIDE LEFT */}
                <aside className="flex-1 p-0">
                   <figure className="flex items-center justify-center lg:mt-10">
@@ -125,7 +125,7 @@ const About = () => {
                </aside>
             </div>
             {/* COUNTERS */}
-            <div className="lg:flex justify-evenly mb-10 lg:mb-20 lg:items-center max-w-[80%] mx-auto">
+            <div className="lg:flex justify-evenly -mt-10 lg:-mt-0 mb-10 lg:mb-20  lg:items-center max-w-[80%] mx-auto">
                <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
                   <PiToiletLight fontSize={60} className="text-blue-900" />
                   <Counter number={3500} title="Toilets Installed" />

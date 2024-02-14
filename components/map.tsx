@@ -19,8 +19,8 @@ const Map = () => {
 
       //   location in lng and lat
       const position = {
-         lat: 43.642693,
-         lng: -79.3871189,
+         lat: 55.94768,
+         lng: -3.21138,
       };
 
       //   map options
