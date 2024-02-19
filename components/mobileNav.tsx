@@ -28,14 +28,14 @@ const MobileNav = () => {
          </SheetTrigger>
          <SheetContent
             side="right"
-            className="p-0 bg-[#111827] text-white space-y-2 flex flex-col items-center "
+            className="p-3 bg-[#111827] text-white space-y-2 flex flex-col items-center "
          >
             {navLinks.map((link, linkIndex) => (
                <Link
                   href={link.href}
                   key={linkIndex}
                   className={cn(
-                     "w-full p-3 mt-20 text-zinc-400 uppercase font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition text-center",
+                     "w-full p-3 mt-20 text-zinc-400 uppercase font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-2xl transition text-center",
                      pathname === link.href
                         ? "text-white bg-white/10"
                         : "text-zinc-400"
