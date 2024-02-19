@@ -2,22 +2,23 @@
 
 import slider from "@/constants/slider";
 import { useEffect, useState } from "react";
-import Image from "next/legacy/image";
-import tap1 from "../../public/tap1.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Button } from "../ui/button";
 
 export const Banner = () => {
    const [currentSlide, setCurrentSlide] = useState(0);
 
-   // useEffect(() => {
-   //    const time = setTimeout(() => {
-   //       setCurrentSlide(prevSlide =>
-   //          prevSlide === slider.length - 1 ? 0 : prevSlide + 1
-   //       );
-   //    }, 20000);
-   //    return () => clearTimeout(time);
-   // }, [currentSlide]);
+   useEffect(() => {
+      const time = setTimeout(() => {
+         setCurrentSlide(prevSlide =>
+            prevSlide === slider.length - 1 ? 0 : prevSlide + 1
+         );
+      }, 20000);
+      return () => clearTimeout(time);
+   }, [currentSlide]);
 
+   console.log(currentSlide);
    const bgImageStyle = {
       backgroundImage: `url(${slider[currentSlide].url})`,
       backgroundPosition: "center",
@@ -27,16 +28,38 @@ export const Banner = () => {
       transition: " 0.5s ease-in-out",
    };
 
+   useEffect(() => {
+      AOS.init({
+         offset: 120,
+         delay: 0,
+         duration: 400,
+         easing: "ease",
+         once: false,
+         mirror: false,
+         anchorPlacement: "top-bottom",
+      });
+   }, []);
+
    return (
       <div className="relative w-full h-[400px] lg:h-[680px] overflow-hidden">
          <div style={bgImageStyle} />
          {/* BANNER HIGHLIGHT */}
-         <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-24 z-50 text-white">
-            <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide">
+         <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-5 md:py-10 lg:py-24 z-50 text-white">
+            <h1
+               data-aos="fade-down"
+               data-aos-easing="linear"
+               data-aos-duration="1000"
+               className="capitalize text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide"
+            >
                {slider[currentSlide]?.title}
             </h1>
 
-            <h2 className="text-lg lg:text-2xl font-bold mb-5 lg:mb-10 text-muted">
+            <h2
+               data-aos="fade-up"
+               data-aos-easing="linear"
+               data-aos-duration="1000"
+               className="capitalize text-lg lg:text-2xl font-bold mb-5 lg:mb-10 text-muted"
+            >
                {slider[currentSlide]?.subtitle}
             </h2>
 

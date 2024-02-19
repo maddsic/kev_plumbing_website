@@ -2,26 +2,26 @@ const slider = [
    {
       url: "/tap1.jpg",
       alt: "slider images",
-      title: "Quality Plumbing at its best price",
-      subtitle: "Get your free estimates today at no cost",
+      title: "Quality Plumbing At Its Best Price",
+      subtitle: "Get Your Free Estimates today at no cost",
    },
    {
-      url: "/tap.jpg",
+      url: "/bg1.jpg",
       alt: "slider images",
-      title: "Quality Plumbing at its best price",
-      subtitle: "Get your free estimates today at no cost",
+      title: "Crafting Seamless Solutions for Your Plumbing Needs",
+      subtitle: "We Care About Our Customers",
    },
    {
-      url: "/tap.jpg",
+      url: "/bg2.jpg",
       alt: "slider images",
-      title: "Quality Plumbing at its best price",
-      subtitle: "Get your free estimates today at no cost",
+      title: "Dunedin: Your Trusted Plumbing Heros",
+      subtitle: "Delivering Expert Solutions, One Leak at a Time",
    },
    {
-      url: "/tap1.jpg",
+      url: "/bg3.jpg",
       alt: "slider images",
-      title: "Quality Plumbing at its best price",
-      subtitle: "Get your free estimates today at no cost",
+      title: "Unveiling Solutions with Precision and Expertise",
+      subtitle: "Where every flush counts",
    },
 ];
 

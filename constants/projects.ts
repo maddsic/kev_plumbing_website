@@ -16,38 +16,38 @@ export const projectData = [
          "Discover the magical wonders hidden within the lush green forest.",
    },
    {
-      image: "/plumber4.jpg",
+      image: "/toilet2.jpeg",
       title: "Pipeline Installations and Replacements",
       description:
          "Discover the magical wonders hidden within the lush green forest.",
    },
    {
-      image: "/plumber1.jpg",
+      image: "/toilet3.jpeg",
       title: "Bathroom Remodeling",
       description: "A breathtaking view of the sunset over the mountains.",
    },
    {
-      image: "/plumber2.jpg",
+      image: "/toilet5.jpeg",
       title: "Water Line Repair",
       description: "The dazzling lights of the cityscape at night.",
    },
    {
-      image: "/plumber2.jpg",
+      image: "/bathtop.jpeg",
       title: "Water Line Repair",
       description: "The dazzling lights of the cityscape at night.",
    },
    {
-      image: "/plumber2.jpg",
+      image: "/bathtop1.jpeg",
       title: "Water Line Repair",
       description: "The dazzling lights of the cityscape at night.",
    },
    {
-      image: "/plumber1.jpg",
+      image: "/wall.jpeg",
       title: "Bathroom Remodeling",
       description: "A breathtaking view of the sunset over the mountains.",
    },
    {
-      image: "/plumber2.jpg",
+      image: "/wall1.jpeg",
       title: "Water Line Repair",
       description: "The dazzling lights of the cityscape at night.",
    },

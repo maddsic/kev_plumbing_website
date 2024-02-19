@@ -10,13 +10,6 @@ import { ContactSchema } from "@/validations/schema";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 
-// type formValues = {
-//    name: string;
-//    email: string;
-//    last_name: string;
-//    message: string;
-// };
-
 type formValues = z.infer<typeof ContactSchema>;
 
 const ContactPage = () => {
@@ -53,9 +46,6 @@ const ContactPage = () => {
       const result = ContactSchema.safeParse(data);
       console.log(result);
 
-      if (typeof window !== "undefined") {
-         localStorage.setItem("myCat", "Tom");
-      }
       if (result.success) {
          const templateParams = {
             from_name: result?.data?.name,

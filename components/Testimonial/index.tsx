@@ -29,12 +29,12 @@ const Testimonials = () => {
             </div>
 
             {/* content */}
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-x-3">
-               {/* <Slider {...settings} className="p-5"> */}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-3 ">
+               {/* <section className=""> */}
                {testimonialData.map((tes, tesIndex) => (
                   <Card
                      key={tesIndex}
-                     className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl sm:p-8"
+                     className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl sm:p-8 "
                   >
                      <div className="flex justify-end">
                         <Quote color="gray" fill="gray" />
@@ -68,7 +68,7 @@ const Testimonials = () => {
                      </CardContent>
                   </Card>
                ))}
-               {/* </Slider> */}
+               {/* </section> */}
             </div>
          </motion.section>
       </main>

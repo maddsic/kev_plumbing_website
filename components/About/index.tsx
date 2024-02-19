@@ -51,7 +51,7 @@ const About = () => {
             transition={{ duration: 1 }}
          >
             {/* CONTENT */}
-            <div className="lg:flex justify-around  gap-x-20 max-w-[80%] mx-auto ">
+            <div className="lg:flex justify-around  gap-x-20 max-w-[80%] mx-auto">
                {/* ASIDE LEFT */}
                <aside className="flex-1 p-0">
                   <figure className="flex items-center justify-center lg:mt-10">
@@ -130,7 +130,7 @@ const About = () => {
                   <PiToiletLight fontSize={60} className="text-blue-900" />
                   <Counter number={3500} title="Toilets Installed" />
                </div>
-               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4 ">
+               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
                   <GiHotSurface fontSize={60} className="text-blue-900" />
                   <Counter number={1200} title="Heaters Repaired" />
                </div>
