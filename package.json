@@ -12,6 +12,7 @@
       "@emailjs/browser": "^4.1.0",
       "@googlemaps/js-api-loader": "^1.16.2",
       "@hookform/resolvers": "^3.3.4",
+      "@radix-ui/react-dialog": "^1.0.5",
       "@radix-ui/react-slot": "^1.0.2",
       "aos": "^2.3.4",
       "class-variance-authority": "^0.7.0",

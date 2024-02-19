@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { navLinks } from "@/constants/navlinks";
 import { Facebook, Instagram, Mail, PhoneCall, Twitter } from "lucide-react";
-import { RxHamburgerMenu } from "react-icons/rx";
+import MobileNav from "./mobileNav";
+import Image from "next/image";
 
 const socialIcons = [
    {
@@ -30,7 +31,7 @@ const Navbar = () => {
          <div className="hidden lg:flex">
             <div className="wording bg-blue-500 w-1/3 p-3 flex items-center px-5">
                <span className="text-white font-bold text-[13px] md:text-[18px]">
-                  Dunedin Edinburgh Enterprise
+                  Dunedin Plumbing & Heating
                </span>
             </div>
             <div className="social__icons bg-blue-950 flex-1 p-3">
@@ -50,14 +51,20 @@ const Navbar = () => {
                </div>
             </div>
          </div>
-         <div className="flex items-center p-3 border bg-white">
-            <div className="logo flex-1">
-               <h1>LOGO</h1>
-            </div>
+         <div className="flex items-center justify-between px-2 lg:px-3 border bg-white">
+            <Link href="/" className="logo lg:w-[30%] cursor-pointer">
+               <div className="relative z-50 w-24 h-24 ">
+                  <Image
+                     src="/logo.png"
+                     alt="Dunedin Logo"
+                     fill
+                     className="object-cover"
+                  />
+               </div>
+            </Link>
 
-            <div className="cursor-pointer lg:hidden">
-               <RxHamburgerMenu size={30} />
-            </div>
+            {/* Mobile Navigation */}
+            <MobileNav />
 
             <div className="email__us hidden lg:flex items-center w-1/3 space-x-10">
                <div className="flex items-center space-x-3">
