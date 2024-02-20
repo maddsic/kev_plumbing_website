@@ -5,7 +5,7 @@ import { Heading } from "./heading";
 import { cn } from "@/lib/utils";
 
 interface SectionSeperatorProps {
-   headerTitle?: string;
+   headerTitle?: string | any;
    subtitle?: string;
    classNames?: React.ReactNode;
 }
