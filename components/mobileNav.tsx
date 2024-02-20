@@ -12,7 +12,7 @@ const MobileNav = () => {
    const [isMounted, setIsMounted] = useState(false);
 
    useEffect(() => {
-      setIsMounted(!isMounted);
+      setIsMounted(true);
    }, []);
 
    if (!isMounted) {

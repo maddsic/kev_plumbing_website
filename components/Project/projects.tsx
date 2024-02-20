@@ -13,7 +13,6 @@ const Project = () => {
    const mainControls = useAnimation();
 
    const checkIsInView = () => {
-      console.log("Projects in view");
       if (isInView) {
          mainControls.start("visible");
       }
@@ -21,7 +20,7 @@ const Project = () => {
 
    useEffect(() => {
       checkIsInView();
-   }, [isInView]);
+   }, [isInView, checkIsInView]);
 
    const productVariants = {
       hidden: { opacity: 0, x: -75 },
