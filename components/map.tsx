@@ -24,7 +24,7 @@ const Map = () => {
       };
 
       //   map options
-      const mapOptions: google.maps.MapOption = {
+      const mapOptions: google.maps.MapOptions = {
          center: position,
          zoom: 17,
          mapId: "my id",
