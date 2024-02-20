@@ -51,7 +51,7 @@ const Navbar = () => {
                </div>
             </div>
          </div>
-         <div className="flex items-center justify-between px-2 lg:px-3 border bg-white">
+         <div className="flex items-center justify-between px-1 lg:px-3 border bg-white">
             <Link href="/" className="logo lg:w-[30%] cursor-pointer">
                <div className="relative z-50 w-24 h-24 ">
                   <Image
