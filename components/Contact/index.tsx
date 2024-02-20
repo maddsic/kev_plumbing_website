@@ -109,7 +109,7 @@ const ContactPage = () => {
                            Get in Touch
                         </p>
                         <h2 className="font-extrabold font-sans text-5xl mb-5 tracking-widest">
-                           Now we're talking
+                           Now we&#39;re talking
                         </h2>
                         <span className="text-sm">
                            Lorem ipsum dolor sit amet consectetur adipisicing
