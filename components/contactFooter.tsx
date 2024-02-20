@@ -22,7 +22,7 @@ const ContactFooter = () => {
                   />
                </div>
                <div className="address mb-4 group-hover:text-blue-700 transition-all duration-1000 ease-in-out">
-                  <address>73 Canal Street, New York, NY</address>
+                  <address>39 Atholl Crescent Lane, Edinburgh, UK</address>
                </div>
             </div>
             <div className="flex gap-x-3 mb-3 border-b-2 border-b-gray-800 group">

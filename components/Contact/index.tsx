@@ -63,6 +63,7 @@ const ContactPage = () => {
             .then(response => {
                console.log("Email: sent successfully", response);
                setMessageSent(true);
+               reset();
                return { success: true, data: response };
             });
       } else if (result.error) {
@@ -108,7 +109,7 @@ const ContactPage = () => {
                         <p className="text-red-500 font-bold mb-5">
                            Get in Touch
                         </p>
-                        <h2 className="font-extrabold font-sans text-5xl mb-5 tracking-widest">
+                        <h2 className="font-extrabold font-sans text-3xl lg:text-5xl mb-5 tracking-widest">
                            Now we&#39;re talking
                         </h2>
                         <span className="text-sm">
@@ -205,6 +206,7 @@ const ContactPage = () => {
                         </p>
                      )}
                      <button
+                        disabled={!messageSent}
                         type="submit"
                         className="mt-10 p-10 flex items-center justify-center text-white bg-black hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                      >
