@@ -5,27 +5,22 @@ import { StyledHeading } from "../styledHeading";
 import { projectData } from "../../constants/projects";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Button } from "../ui/button";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 const Project = () => {
    const ref = useRef(null);
    const isInView = useInView(ref, { once: true, amount: 0.09 });
    const mainControls = useAnimation();
 
-   const checkIsInView = () => {
+   const checkIsInView = useCallback(() => {
       if (isInView) {
          mainControls.start("visible");
       }
-   };
+   }, [isInView]);
 
    useEffect(() => {
       checkIsInView();
    }, [isInView, checkIsInView]);
-
-   const productVariants = {
-      hidden: { opacity: 0, x: -75 },
-      visible: { opacity: 1, x: 0 },
-   };
 
    return (
       <section id="projects" className="app__container ">
