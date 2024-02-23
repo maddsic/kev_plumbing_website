@@ -17,10 +17,18 @@ const Map = () => {
          "marker"
       )) as google.maps.MarkerLibrary;
 
-      //   location in lng and lat
+      // convert type to number
+      const lat: number = parseFloat(process.env.NEXT_PUBLIC_LAT as string);
+      const lng: number = parseFloat(process.env.NEXT_PUBLIC_LNG as string);
+
+      if (isNaN(lat) || isNaN(lng)) {
+         throw new Error("Invalid lat and lng values");
+      }
+
+      // location in lng and lat
       const position = {
-         lat: 55.94768,
-         lng: -3.21138,
+         lat: lat,
+         lng: lng,
       };
 
       //   map options

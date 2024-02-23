@@ -53,12 +53,12 @@ const Navbar = () => {
          </div>
          <div className="flex items-center justify-between px-1 lg:px-3 border bg-white">
             <Link href="/" className="logo lg:w-[30%] cursor-pointer">
-               <div className="relative z-50 w-24 h-24 ">
+               <div className="relative z-50 w-20 h-24 md:w-24 md:h-24 rounded">
                   <Image
                      src="/logo.png"
                      alt="Dunedin Logo"
                      fill
-                     className="object-cover"
+                     className="object-cover shadow-2xl"
                   />
                </div>
             </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
                   {navLinks.map((link, linkIndex) => (
                      <li key={linkIndex}>
                         <Link
-                           className="link uppercase text font-bold hover:opacity-90 transition duration-1000 ease-in-out"
+                           className="link uppercase text font-bold hover:text-gray-500 transition duration-1000 ease-in-out"
                            href={link.href}
                         >
                            {link.label}

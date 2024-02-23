@@ -38,7 +38,7 @@ const Project = () => {
                </h2>
             </div>
 
-            <div className="flex justify-center items-start flex-wrap mt-[1rem] max-w-[90%] mx-auto">
+            <div className="p-0 flex justify-center items-start flex-wrap mt-[1rem] w-full mx-auto">
                {projectData.map((project, productIndex) => (
                   <motion.div
                      key={productIndex}
@@ -54,7 +54,7 @@ const Project = () => {
                      //    scale: 1.2,
                      //    transition: { duration: 0.4 },
                      // }}
-                     className="sm:w-[200px] md:w-[250px] flex justify-start items-start flex-col m-[1rem]"
+                     className="w-full md:w-[300px] flex justify-start items-start flex-col p-3"
                      whileInView={{ opacity: 1 }}
                      whileHover={{ scale: 1.1 }}
                      transition={{ duration: 0.5, type: "Inertia" }}
@@ -74,7 +74,7 @@ const Project = () => {
             <div className="flex justify-center mx-auto">
                <Button
                   variant="ghost"
-                  className="bg-blue-900 text-white mt-8 font-semibold rounded"
+                  className="bg-sky-500 text-white mt-8 font-semibold rounded"
                   size="lg"
                >
                   Explore More

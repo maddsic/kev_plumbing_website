@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { serviceData } from "../../constants/services";
 import { motion } from "framer-motion";
+import { Heading } from "../heading";
+import { StyledHeading } from "../styledHeading";
 
 const Services = () => {
    return (
@@ -12,11 +14,17 @@ const Services = () => {
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
-            <h2 className="head-text app__about">
+            <h3 className="text-[#001733] text-[24px] font-bold md:head-text app__about">
                I know that <span className="text-blue-700">Good Service</span>
                <br /> means <span className="text-blue-700">Good Business</span>
-            </h2>
-
+            </h3>
+            {/* <div className="max-w-1/2 mx-auto">
+               <StyledHeading
+                  title="Good Service Means Good Business"
+                  classNames="text-blue-500"
+               />
+               <Heading title="Our Testimonials" classNames="text-gray-950" />
+            </div> */}
             <div className="flex justify-center items-start flex-wrap mt-[1rem] container">
                {serviceData.map((service, sIndex) => (
                   <motion.div
@@ -27,7 +35,7 @@ const Services = () => {
                      transition={{ duration: 0.5, type: "Inertia" }}
                   >
                      <Image
-                        alt={service.description}
+                        alt={service.title}
                         src={service.image}
                         className="w-[100%] h-[190px] rounded-[20px] object-cover repeat-0"
                         width={100}
@@ -40,9 +48,6 @@ const Services = () => {
                      >
                         {service.title}
                      </h2>
-                     <p className="p-text" style={{ marginTop: 10 }}>
-                        {service.description}
-                     </p>
                   </motion.div>
                ))}
             </div>

@@ -7,13 +7,13 @@ import { StyledHeading } from "../styledHeading";
 const chooseData = [
    {
       icon: ShowerHead,
-      title: "Fast & Efficient Service",
+      title: "24/7 Service",
       description:
          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
    },
    {
       icon: Users,
-      title: "Qualified Team",
+      title: "Free Consultation",
       description:
          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
    },

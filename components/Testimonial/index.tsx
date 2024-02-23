@@ -36,10 +36,10 @@ const Testimonials = () => {
                      key={tesIndex}
                      className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl sm:p-8 "
                   >
-                     <div className="flex justify-end">
+                     <div className="flex justify-end p-1">
                         <Quote color="gray" fill="gray" />
                      </div>
-                     <CardHeader className="lg:text-lg text-start leading gray-text">
+                     <CardHeader className="lg:text-md text-start leading gray-text">
                         <p>{tes.content}</p>
                      </CardHeader>
 
@@ -55,8 +55,12 @@ const Testimonials = () => {
                         </div>
 
                         <div className="flex flex-col items-center justify-center">
-                           <p className="text-lg font-bold mb-2">{tes.title}</p>
-                           <p className="text-gray-500 mb-2">Happy Client</p>
+                           <p className="text-md font-bold mb-0 md:md-1">
+                              {tes.title}
+                           </p>
+                           <p className="text-gray-500 text-sm mb-2">
+                              Happy Client
+                           </p>
                            <div className="flex">
                               <Star color="yellow" fill="yellow" />
                               <Star color="yellow" fill="yellow" />

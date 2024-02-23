@@ -90,7 +90,7 @@ const ContactPage = () => {
          <main id="contact" className="w-100 app__wrapper">
             <section className="container relative z-10 -mt-24 lg:-mt-56">
                <div
-                  className="form max-w-full lg:w-2/4 mx-auto bg-white"
+                  className="form max-w-full h-50 lg:w-2/4 mx-auto bg-white"
                   data-aos="fade-down"
                   data-aos-easing="linear"
                   data-aos-duration="1000"
@@ -98,7 +98,7 @@ const ContactPage = () => {
                   {/* FORM */}
                   <form
                      onSubmit={handleSubmit(onSubmit)}
-                     className="w-full border py-14 px-5 sm:p-10 shadow-2xl"
+                     className="w-full py-7 md:py-14 px-4 md:px-5 sm:p-10 shadow-2xl"
                   >
                      {messageSent && (
                         <span className="text-green-700 font-semibold text-2xl flex justify-center mb-2 animate-bounce">
@@ -117,8 +117,8 @@ const ContactPage = () => {
                            elit.
                         </span>
                      </div>
-                     <div className="grid md:grid-cols-2 md:gap-6 mt-10">
-                        <div className="relative z-0 mb-10 w-full group">
+                     <div className="grid md:grid-cols-2 md:gap-6 mt-5 md:mt-10">
+                        <div className="relative z-0 mb-5 md:mb-10 w-full group">
                            <input
                               type="text"
                               id="floating_first_name"
@@ -140,7 +140,7 @@ const ContactPage = () => {
                               </p>
                            )}
                         </div>
-                        <div className="relative z-0 mb-10 w-full group">
+                        <div className="relative z-0 mb-5 md:mb-10 w-full group">
                            <input
                               type="text"
                               id="floating_last_name"
@@ -163,7 +163,7 @@ const ContactPage = () => {
                            )}
                         </div>
                      </div>
-                     <div className="relative z-0 mb-6 w-full group">
+                     <div className="relative z-0 mb-5 md:mb-6 w-full group">
                         <input
                            type="email"
                            id="floating_email"
@@ -206,9 +206,9 @@ const ContactPage = () => {
                         </p>
                      )}
                      <button
-                        disabled={!messageSent}
+                        disabled={messageSent}
                         type="submit"
-                        className="mt-10 p-10 flex items-center justify-center text-white bg-black hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        className="md:mt-10 p-10 flex items-center justify-center text-white bg-black hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                      >
                         <span>
                            <svg
