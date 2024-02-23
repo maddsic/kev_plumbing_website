@@ -29,6 +29,27 @@
    scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+   width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: white;
+   border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: blue;
+   border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: black;
+}
+
 body {
    @apply overflow-x-hidden;
 }
