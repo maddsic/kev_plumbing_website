@@ -34,12 +34,12 @@ const data = [
 ];
 
 const list = [
-   "Qualified team",
    "Affordable pricing",
-   "Quick service",
-   "10+ years experience",
-   "100+ projects done",
+   "24/7 Service",
+   "Free telephone consultation",
    "Plumbing Experts",
+   "15+ years experience",
+   "Your own locals",
 ];
 
 const About = () => {
@@ -79,10 +79,10 @@ const About = () => {
                         Plumbing is what we do
                      </h3>
                      <p className="gray-text leading-8 text-[13px] lg:text-[16px] font-medium">
-                        We are an award winning plumbing company with over 20
-                        years experience in the business. We provide a wide
-                        range of services for both residential and commercial
-                        clients.
+                        Dunedin, a historical name for Edinburgh, is a local
+                        company run by a family native to Edinburgh. We take
+                        pride in our fully qualified and highly skilled team,
+                        proficient in multiple trades and expertise.
                      </p>
                      <div className="lg:grid grid-cols-2 mt-8">
                         {list.map((item, index) => (
@@ -110,14 +110,13 @@ const About = () => {
                      </div>
                   </div>
                   <p className="gray-text text-[12px] lg:text-[14px] lg:font-medium leading-7">
-                     No job is too big or too small, we’ve got you covered. In
-                     addition to our services, you can check out our shop for a
-                     wide range of plumbing supplies and equipment. When it
-                     comes to plumbing we are your one stop shop.
+                     Whether it's a small fix or a complete renovation, our
+                     skilled team is equipped to handle it all. Trust us to
+                     tackle any plumbing project with precision and care.
                   </p>
                   <Button
                      variant="ghost"
-                     className="bg-blue-900 hover:bg-blue-800 text-white mt-4 lg:mt-8 font-semibold"
+                     className="bg-blue-500 hover:bg-sky-500 text-white mt-4 lg:mt-8 font-semibold"
                      size="lg"
                   >
                      Learn More
@@ -125,22 +124,22 @@ const About = () => {
                </aside>
             </div>
             {/* COUNTERS */}
-            <div className="lg:flex justify-evenly -mt-10 lg:-mt-0 mb-10 lg:mb-20  lg:items-center max-w-[80%] mx-auto">
+            <div className="md:flex justify-evenly -mt-10 lg:-mt-0 mb-10 lg:mb-20 md:items-center max-w-[80%] mx-auto">
                <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <PiToiletLight fontSize={60} className="text-blue-900" />
+                  <PiToiletLight fontSize={60} className="text-sky-700" />
                   <Counter number={3500} title="Toilets Installed" />
                </div>
                <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <GiHotSurface fontSize={60} className="text-blue-900" />
+                  <GiHotSurface fontSize={60} className="text-sky-700" />
                   <Counter number={1200} title="Heaters Repaired" />
                </div>
 
                <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <IoWaterOutline fontSize={60} className="text-blue-900" />
+                  <IoWaterOutline fontSize={60} className="text-sky-700" />
                   <Counter number={2550} title="Burst Mains Repaired" />
                </div>
                <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <GiTap fontSize={60} className="text-blue-900" />
+                  <GiTap fontSize={60} className="text-sky-700" />
                   <Counter number={3000} title="Leaky Faucets Fixed" />
                </div>
             </div>

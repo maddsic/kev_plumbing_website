@@ -17,7 +17,7 @@ export default function Home() {
          <Navbar />
          <Banner />
          <About />
-         <SectionSeperator headerTitle="Quality service is our gaurantee" />
+         <SectionSeperator headerTitle="Your Trusted Partner for Seamless Service Solutions" />
          <Services />
          <Choose />
          <Testimonials />

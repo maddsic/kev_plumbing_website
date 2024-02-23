@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export const Banner = () => {
    const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,32 +46,44 @@ export const Banner = () => {
          <div style={bgImageStyle} />
          {/* BANNER HIGHLIGHT */}
          <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-5 md:py-10 lg:py-24 z-50 text-white">
-            <h1
-               data-aos="fade-down"
-               data-aos-easing="linear"
-               data-aos-duration="1000"
-               className="capitalize text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide"
-            >
-               {slider[currentSlide]?.title}
-            </h1>
+            <div className="w-[80%] lg:w-[65%]">
+               <h1
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="1000"
+                  className="capitalize text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide"
+               >
+                  {slider[currentSlide]?.title}
+               </h1>
 
-            <h2
-               data-aos="fade-up"
-               data-aos-easing="linear"
-               data-aos-duration="1000"
-               className="capitalize text-lg lg:text-2xl font-bold mb-5 lg:mb-10 text-muted"
-            >
-               {slider[currentSlide]?.subtitle}
-            </h2>
-
-            {/* button */}
-            <div className="flex gap-5 ">
-               <Button size="lg" className="py-6 text-lg font-bold bg-blue-950">
-                  Contact US
-               </Button>
-               <Button size="lg" className="py-6 text-lg font-bold bg-blue-600">
-                  Services
-               </Button>
+               <h2
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="1000"
+                  className="capitalize text-lg -mt-7 md:-mt-0 lg:text-2xl font-bold mb-5 lg:mb-10 text-muted hidden md:block"
+               >
+                  {slider[currentSlide]?.subtitle}
+               </h2>
+               {/* button */}
+               <div className="flex justify-center gap-5 mx">
+                  <Link href="#contact">
+                     <Button
+                        size="lg"
+                        variant="secondary"
+                        className="py-6 text-lg font-bold bg-blue-950 hover:bg-blue-900 cursor-pointer"
+                     >
+                        Contact US
+                     </Button>
+                  </Link>
+                  <Link href="#services">
+                     <Button
+                        size="lg"
+                        className="py-6 text-lg font-bold bg-blue-600"
+                     >
+                        Services
+                     </Button>
+                  </Link>
+               </div>
             </div>
          </div>
          {/* WHITE OVERLAY */}
