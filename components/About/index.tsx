@@ -13,25 +13,11 @@ import { Counter } from "../counter";
 import { GiHotSurface, GiTap } from "react-icons/gi";
 import { PiToiletLight } from "react-icons/pi";
 import { IoWaterOutline } from "react-icons/io5";
+import { Metadata } from "next";
 
-const data = [
-   {
-      title: "General Plumbing Maintenance",
-      icon: Home,
-   },
-   {
-      title: "24/7 Emergency Plumbing Service",
-      icon: Truck,
-   },
-   {
-      title: "Plumbing Supplies and Equipment",
-      icon: Hammer,
-   },
-   //    {
-   //       title: "Commercial Plumbing",
-   //       icon: Home,
-   //    },
-];
+export const metadata: Metadata = {
+   title: "About",
+};
 
 const list = [
    "Affordable pricing",
