@@ -110,7 +110,7 @@ const About = () => {
                      </div>
                   </div>
                   <p className="gray-text text-[12px] lg:text-[14px] lg:font-medium leading-7">
-                     Whether it's a small fix or a complete renovation, our
+                     Whether it&apos;s a small fix or a complete renovation, our
                      skilled team is equipped to handle it all. Trust us to
                      tackle any plumbing project with precision and care.
                   </p>
