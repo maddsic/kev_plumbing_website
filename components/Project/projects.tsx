@@ -54,7 +54,7 @@ const Project = () => {
                      //    scale: 1.2,
                      //    transition: { duration: 0.4 },
                      // }}
-                     className="w-full md:w-[300px] flex justify-start items-start flex-col p-3"
+                     className="w-full md:w-1/3 lg:w-1/4 xl:max-w-1/5 flex justify-start items-start flex-col p-3"
                      whileInView={{ opacity: 1 }}
                      whileHover={{ scale: 1.1 }}
                      transition={{ duration: 0.5, type: "Inertia" }}

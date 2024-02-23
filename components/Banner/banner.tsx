@@ -19,7 +19,6 @@ export const Banner = () => {
       return () => clearTimeout(time);
    }, [currentSlide]);
 
-   console.log(currentSlide);
    const bgImageStyle = {
       backgroundImage: `url(${slider[currentSlide].url})`,
       backgroundPosition: "center",
