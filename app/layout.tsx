@@ -7,8 +7,14 @@ import "./globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-   title: "Dunedin Plumbing",
-   description: "A plumbing website",
+   title: {
+      default: "Dunedin",
+      template: "%s - Dunedin Plumbing",
+   },
+   description: "Welcome to Dunedin Plumbing and Heating",
+   twitter: {
+      card: "summary_large_image",
+   },
 };
 
 export default function RootLayout({
