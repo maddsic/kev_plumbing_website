@@ -34,7 +34,7 @@ const Testimonials = () => {
                {testimonialData.map((tes, tesIndex) => (
                   <Card
                      key={tesIndex}
-                     className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl sm:p-8 "
+                     className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl sm:p-8 overflow-hidden"
                   >
                      <div className="flex justify-end p-1">
                         <Quote color="gray" fill="gray" />
