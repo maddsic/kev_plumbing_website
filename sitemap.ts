@@ -1,39 +1,39 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    return [
       {
-         url: "https://dunedin-plumbing.vercel.app/",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 1,
       },
       {
-         url: "https://dunedin-plumbing.vercel.app/#about",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/#about`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 0.8,
       },
       {
-         url: "https://dunedin-plumbing.vercel.app/#services",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/#services`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 0.5,
       },
       {
-         url: "https://dunedin-plumbing.vercel.app/#testimonials",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/#testimonials`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 0.5,
       },
       {
-         url: "https://dunedin-plumbing.vercel.app/#projects",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/#projects`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 0.5,
       },
       {
-         url: "https://dunedin-plumbing.vercel.app/#contact",
+         url: `${process.env.NEXT_PUBLIC_BASE_URL}/#contact`,
          lastModified: new Date(),
          changeFrequency: "weekly",
          priority: 0.5,
