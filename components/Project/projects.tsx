@@ -6,6 +6,13 @@ import { projectData } from "../../constants/projects";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Button } from "../ui/button";
 import { useCallback, useEffect, useRef } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Plumbing Projects Portfolio - Dunedin Plumbing and Heating",
+   description:
+      "View examples of Dunedin Plumbing and Heating  past projects, including bathroom remodels, pipe replacements, and more. Trust our experienced team for your next plumbing project.",
+};
 
 const Project = () => {
    const ref = useRef(null);

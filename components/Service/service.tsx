@@ -3,8 +3,13 @@
 import Image from "next/image";
 import { serviceData } from "../../constants/services";
 import { motion } from "framer-motion";
-import { Heading } from "../heading";
-import { StyledHeading } from "../styledHeading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Plumbing Services in Edinburgh and Fife - Installation, Repair, Maintenance",
+   description:
+      "Dunedin Plumbing and Heating offers comprehensive plumbing services in Edinburgh and Fife, including installation, repair, and maintenance. Contact us for expert plumbing solutions.",
+};
 
 const Services = () => {
    return (

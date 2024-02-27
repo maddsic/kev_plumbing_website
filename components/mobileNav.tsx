@@ -23,12 +23,12 @@ const MobileNav = () => {
       <Sheet>
          <SheetTrigger>
             <Button variant="ghost" size="icon" className="lg:hidden">
-               <Menu size={50} />
+               <Menu size={50} className="" />
             </Button>
          </SheetTrigger>
          <SheetContent
             side="right"
-            className="p-3 bg-[#111827] text-white space-y-2 flex flex-col items-center "
+            className="p-3 bg-[#111827] text-white space-y-2 flex flex-col items-center animate-in transition-all duration-10000 ease-in-out "
          >
             {navLinks.map((link, linkIndex) => (
                <Link
