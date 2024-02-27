@@ -28,10 +28,10 @@ export default function CookiesConcent() {
             initial={{ opacity: 0, y: 700 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2, ease: "easeOut" }}
-            className="fixed bottom-0 left-0  md:flex md:items-center md:justify-between px-4 py-14 bg-violet-950 w-full"
+            className="fixed bottom-0 left-0  md:flex md:items-center md:justify-between px-4 py-14 bg-white w-full"
          >
             <div className="w-full md:w-[80%] mx-auto flex flex-col justify-between gap-y-5">
-               <span className="text-base text-white font-bold md:mr-16 md:ml-20">
+               <span className="text-base gray-text dark:text-white md:mr-16 md:ml-20">
                   This website uses cookies to improve user experience. By using
                   our website you consent to all the Terms of Usage in
                   accordance with our{" "}

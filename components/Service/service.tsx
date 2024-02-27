@@ -19,7 +19,7 @@ const Services = () => {
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
-            <h3 className="text-[#001733] text-[24px] font-bold md:head-text app__about">
+            <h3 className="text-[#001733] text-[24px] font-bold md:text-[1.8rem] app__about">
                I know that <span className="text-blue-700">Good Service</span>
                <br /> means <span className="text-blue-700">Good Business</span>
             </h3>
