@@ -9,6 +9,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "@/validations/schema";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Contact Dunedin Plumbing and Heating - Get in Touch Today",
+   description:
+      "Contact Dunedin Plumbing and Heating for all your plumbing needs in Edinburgh and Fife. Call us at 07400847374 or email enquires@dunedinplumbing.co.uk to schedule service.",
+};
 
 type formValues = z.infer<typeof ContactSchema>;
 
@@ -34,16 +41,6 @@ const ContactPage = () => {
    }, []);
 
    const onSubmit: SubmitHandler<formValues> = async data => {
-      // const result = await sendMail(data);
-
-      // if (!result) {
-      //    console.log("Something went wrong");
-      //    return;
-      // }
-      // console.log("email send from client component");
-      // reset();
-      // setFormData(data);
-
       const result = ContactSchema.safeParse(data);
       console.log(result);
 
@@ -51,7 +48,7 @@ const ContactPage = () => {
          const templateParams = {
             from_name: result?.data?.name,
             from_email: result?.data?.email,
-            to_name: "Dunedine Plumbing Enterprise",
+            to_name: "Dunedine Plumbing and Heating",
             message: result?.data?.message,
          };
          emailjs
@@ -71,9 +68,6 @@ const ContactPage = () => {
          return { success: false, error: result.error.format() };
       }
    };
-
-   // console.log("watching input");
-   // console.log(watch("name"));
 
    useEffect(() => {
       AOS.init({

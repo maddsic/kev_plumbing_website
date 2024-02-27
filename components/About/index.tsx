@@ -14,9 +14,12 @@ import { GiHotSurface, GiTap } from "react-icons/gi";
 import { PiToiletLight } from "react-icons/pi";
 import { IoWaterOutline } from "react-icons/io5";
 import { Metadata } from "next";
+import { useRef } from "react";
 
 export const metadata: Metadata = {
-   title: "About",
+   title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
+   description:
+      "Learn about Dunedine Plumbing and Heating history, mission, and team. Trust our experienced plumbers for all your plumbing needs in Edinburgh and Fife",
 };
 
 const list = [
@@ -29,6 +32,7 @@ const list = [
 ];
 
 const About = () => {
+   const aboutRef = useRef<HTMLDivElement | null>(null);
    return (
       <main id="about" className="pb-8 px-4 xs:px-6 sm:px-16 md:px-24 mt-10">
          <motion.section

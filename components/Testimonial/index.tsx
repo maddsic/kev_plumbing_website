@@ -7,6 +7,13 @@ import { Heading } from "../heading";
 import { testimonialData } from "@/constants/testimonials";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Quote, Star } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "Customer Testimonials - Dunedin Plumbing and Heating",
+   description:
+      "Read what our satisfied customers have to say about their experienceDunedin Plumbing and Heating. Trust our team for reliable plumbing services in Edinburgh and Fife.",
+};
 
 const Testimonials = () => {
    return (
