@@ -12,6 +12,8 @@ import ContactPage from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/scrollToTop";
 import CookiesConcent from "./cookiesConcent";
+import NavigationDots from "@/components/navigationDots";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
    return (
@@ -23,19 +25,19 @@ export default function Home() {
          <About />
          <SectionSeperator
             headerTitle="Your Trusted Partner for Seamless Service Solutions"
-            classNames="bg-[url('/bg1.jpg)]"
+            // className="bg-[url('/bg1.jpg)] bg-fixed bg-cover"
          />
          <Services />
          <Choose />
          <Testimonials />
          <SectionSeperator
             headerTitle="Experience seamless plumbing solutions tailored to your needs."
-            classNames="bg-[url('/bg2.jpg)]"
+            // className="bg-[url('/bg3.jpg)] bg-fixed bg-cover"
          />
          <Project />
          <SectionSeperator
             headerTitle="Contact Us"
-            classNames="bg-[url('/bg3.jpg')] lg:min-h-[400px]"
+            className="bg-[url('/bg3.jpg')] bg-fixed bg-cover lg:min-h-[400px] "
          />
 
          <ContactPage />
