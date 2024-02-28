@@ -7,7 +7,7 @@ interface navigationDotsProps {
 
 const NavigationDots = ({ active }: navigationDotsProps) => {
    return (
-      <div className="app-flex-col">
+      <div className="app-flex-col fixed bottom-1/2 right-[15px] p-3 z-50">
          {navLinks.map((link, linkIndex) => (
             <Link
                href={`#${link}`}

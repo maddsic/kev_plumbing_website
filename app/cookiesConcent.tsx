@@ -28,14 +28,16 @@ export default function CookiesConcent() {
             initial={{ opacity: 0, y: 700 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2, ease: "easeOut" }}
-            className="fixed bottom-0 left-0  md:flex md:items-center md:justify-between px-4 py-14 bg-white w-full"
+            className="fixed bottom-0 left-0  md:flex md:items-center md:justify-between px-4 py-6 bg-white w-full"
          >
-            <div className="w-full md:w-[80%] mx-auto flex flex-col justify-between gap-y-5">
-               <span className="text-base gray-text dark:text-white md:mr-16 md:ml-20">
-                  This website uses cookies to improve user experience. By using
-                  our website you consent to all the Terms of Usage in
-                  accordance with our{" "}
-                  <Link href="/" className="font-extrabold text-lg">
+            <div className="w-full lg:w-[80%] mx-auto flex flex-col justify-between gap-y-5 lg:flex lg:flex-row ">
+               <span className="text-sm md:text-base gray-text dark:text-white md:mr-16 md:ml-20">
+                  We serve cookies. We use tools, such as cookies, to enable
+                  essential services and functionality on our site and to
+                  collect data on how visitors interact with our site, products
+                  and services. By clicking Accept, you agree to our use of
+                  these tools for advertising, analytics and support.{" "}
+                  <Link href="/" className="underline text-blue-500">
                      Privacy Policy.
                   </Link>
                </span>
