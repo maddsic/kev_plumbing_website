@@ -23,7 +23,7 @@ export default function Home() {
    const id: any = useRef(null);
 
    const clear = () => {
-      // setPreloader(false);
+      setPreloader(false);
       window.clearInterval(id.current);
    };
 
