@@ -13,8 +13,12 @@ const Loader = () => {
                className="animate-bounce"
             />
          </div>
-         <h1>Dunedin Plumbing & Heating</h1>
-         <h2>Edinburgh, Uk</h2>
+         <h1 className="text-2xl font-bold uppercase md:text-[1.5vw] ">
+            Dunedin Plumbing & Heating
+         </h1>
+         <h2 className="text-base uppercase mt-2 md:text-[1.5vw]">
+            Edinburgh, Uk
+         </h2>
       </div>
    );
 };
