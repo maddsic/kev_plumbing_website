@@ -1,0 +1,22 @@
+import Image from "next/image";
+import React from "react";
+
+const Loader = () => {
+   return (
+      <div className="loader-wrapper absolute top-0 right-0 bottom-0 left-0 bg-black z-1">
+         <div className="logo">
+            <Image
+               src="/logo.png"
+               alt="Dunedin plimbing and heating logo"
+               width="100"
+               height="100"
+               className="animate-bounce"
+            />
+         </div>
+         <h1>Dunedin Plumbing & Heating</h1>
+         <h2>Edinburgh, Uk</h2>
+      </div>
+   );
+};
+
+export default Loader;

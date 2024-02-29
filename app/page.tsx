@@ -14,34 +14,63 @@ import ScrollToTop from "@/components/scrollToTop";
 import CookiesConcent from "./cookiesConcent";
 import NavigationDots from "@/components/navigationDots";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { useEffect, useRef, useState } from "react";
+import Loader from "@/components/loader";
 
 export default function Home() {
-   return (
-      <main className="min-h-screen">
-         <ScrollToTop />
-         <CookiesConcent />
-         <Navbar />
-         <Banner />
-         <About />
-         <SectionSeperator
-            headerTitle="Your Trusted Partner for Seamless Service Solutions"
-            // style="bg-[url('/bg1.jpg)] bg-fixed bg-cover"
-         />
-         <Services />
-         <Choose />
-         <Testimonials />
-         <SectionSeperator
-            headerTitle="Experience seamless plumbing solutions tailored to your needs."
-            // style="bg-[url('/bg2.jpg)] bg-fixed bg-cover"
-         />
-         <Project />
-         <SectionSeperator
-            headerTitle="Contact Us"
-            style="bg-[url('/bg3.jpg')] bg-fixed bg-cover lg:min-h-[400px] "
-         />
+   const [preloader, setPreloader] = useState(true);
+   const [timer, setTimer] = useState<number>(2);
+   const id: any = useRef(null);
 
-         <ContactPage />
-         <Footer />
-      </main>
+   const clear = () => {
+      window.clearInterval(id.current);
+      setPreloader(false);
+   };
+
+   useEffect(() => {
+      id.current = window.setInterval(() => {
+         setTimer(timer => timer - 1);
+      }, 1000);
+   }, []);
+
+   useEffect(() => {
+      if (timer === 0) {
+         clear();
+      }
+   }, [timer]);
+
+   return (
+      <>
+         {preloader ? (
+            <Loader />
+         ) : (
+            <main className="min-h-screen">
+               <ScrollToTop />
+               <CookiesConcent />
+               <Navbar />
+               <Banner />
+               <About />
+               <SectionSeperator
+                  headerTitle="Your Trusted Partner for Seamless Service Solutions"
+                  // style="bg-[url('/bg1.jpg)] bg-fixed bg-cover"
+               />
+               <Services />
+               <Choose />
+               <Testimonials />
+               <SectionSeperator
+                  headerTitle="Experience seamless plumbing solutions tailored to your needs."
+                  // style="bg-[url('/bg2.jpg)] bg-fixed bg-cover"
+               />
+               <Project />
+               <SectionSeperator
+                  headerTitle="Contact Us"
+                  style="bg-[url('/bg3.jpg')] bg-fixed bg-cover lg:min-h-[400px] "
+               />
+
+               <ContactPage />
+               <Footer />
+            </main>
+         )}
+      </>
    );
 }
