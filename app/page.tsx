@@ -29,7 +29,7 @@ export default function Home() {
 
    useEffect(() => {
       // Check if the component is mounted
-      let isMounted: Boolean = false;
+      let isMounted: Boolean = true;
 
       id.current = window.setInterval(() => {
          setTimer(timer => timer - 1);
