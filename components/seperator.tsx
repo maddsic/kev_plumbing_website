@@ -7,19 +7,19 @@ import { cn } from "@/lib/utils";
 interface SectionSeperatorProps {
    headerTitle?: string | any;
    subtitle?: string;
-   className?: string;
+   style?: string | undefined;
 }
 
 const SectionSeperator = ({
    headerTitle,
    subtitle,
-}: // className,
-SectionSeperatorProps) => {
+   style,
+}: SectionSeperatorProps) => {
    return (
       <main
          className={cn(
-            "relative overflow-hidden py-20 lg:py-32 border bg-[url('/bg2.jpg)] bg-fixed bg-cover"
-            // className
+            "relative overflow-hidden py-20 lg:py-32 border bg-[url('/bg3.jpg')] bg-fixed bg-cover",
+            style
          )}
       >
          {/* BACKGROUND COLOR @GRAY */}

@@ -25,19 +25,19 @@ export default function Home() {
          <About />
          <SectionSeperator
             headerTitle="Your Trusted Partner for Seamless Service Solutions"
-            // className="bg-[url('/bg1.jpg)] bg-fixed bg-cover"
+            // style="bg-[url('/bg1.jpg)] bg-fixed bg-cover"
          />
          <Services />
          <Choose />
          <Testimonials />
          <SectionSeperator
             headerTitle="Experience seamless plumbing solutions tailored to your needs."
-            // className="bg-[url('/bg3.jpg)] bg-fixed bg-cover"
+            // style="bg-[url('/bg2.jpg)] bg-fixed bg-cover"
          />
          <Project />
          <SectionSeperator
             headerTitle="Contact Us"
-            className="bg-[url('/bg3.jpg')] bg-fixed bg-cover lg:min-h-[400px] "
+            style="bg-[url('/bg3.jpg')] bg-fixed bg-cover lg:min-h-[400px] "
          />
 
          <ContactPage />
