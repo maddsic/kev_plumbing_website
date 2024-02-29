@@ -8,7 +8,7 @@ const Loader = () => {
          <div className="logo">
             <Image
                src="/logo.png"
-               alt="Dunedin plimbing and heating logo"
+               alt="Dunedin plimbing and heating logo image"
                width="100"
                height="100"
                className="animate-bounce"
