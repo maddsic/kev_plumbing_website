@@ -12,6 +12,6 @@ export default function robot(): MetadataRoute.Robots {
             allow: "/",
          },
       ],
-      sitemap: `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,
+      sitemap: `${baseUrl}/sitemap.xml`,
    };
 }
