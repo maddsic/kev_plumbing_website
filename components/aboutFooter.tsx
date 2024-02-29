@@ -32,9 +32,10 @@ const AboutFooter = () => {
 
          <div className="py-8 md:py-14">
             <p className="text-lg leading-2 text-gray-300 hover:text-white hover:text-xl hover:transition duration-1000 ease-in-out">
-               We are an award winning plumbing company with over 20 years
-               experience in the business. We provide a wide range of services
-               for both residential and commercial clients.
+               Dunedin, a historical name for Edinburgh, is a local company run
+               by a family native to Edinburgh. We take pride in our fully
+               qualified and highly skilled team, proficient in multiple trades
+               and expertise.
             </p>
          </div>
 
