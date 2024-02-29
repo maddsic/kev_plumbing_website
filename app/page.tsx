@@ -19,7 +19,7 @@ import Loader from "@/components/loader";
 
 export default function Home() {
    const [preloader, setPreloader] = useState(true);
-   const [timer, setTimer] = useState<number>(2);
+   const [timer, setTimer] = useState<number>(3);
    const id: any = useRef(null);
 
    const clear = () => {
@@ -27,11 +27,11 @@ export default function Home() {
       setPreloader(false);
    };
 
-   useEffect(() => {
-      id.current = window.setInterval(() => {
-         setTimer(timer => timer - 1);
-      }, 1000);
-   }, []);
+   // useEffect(() => {
+   //    id.current = window.setInterval(() => {
+   //       setTimer(timer => timer - 1);
+   //    }, 1000);
+   // }, []);
 
    useEffect(() => {
       if (timer === 0) {
