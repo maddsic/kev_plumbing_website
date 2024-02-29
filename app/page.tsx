@@ -23,15 +23,15 @@ export default function Home() {
    const id: any = useRef(null);
 
    const clear = () => {
+      // setPreloader(false);
       window.clearInterval(id.current);
-      setPreloader(false);
    };
 
-   // useEffect(() => {
-   //    id.current = window.setInterval(() => {
-   //       setTimer(timer => timer - 1);
-   //    }, 1000);
-   // }, []);
+   useEffect(() => {
+      id.current = window.setInterval(() => {
+         setTimer(timer => timer - 1);
+      }, 1000);
+   }, []);
 
    useEffect(() => {
       if (timer === 0) {
