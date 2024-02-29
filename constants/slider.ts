@@ -2,7 +2,7 @@ const slider = [
    {
       url: "/tap1.jpg",
       alt: "slider images",
-      title: "Quality Plumbing At Its Best Price",
+      title: "Quality Plumbing, Affordable Price",
       subtitle: "Get Your Free Estimates today at no cost",
    },
    {

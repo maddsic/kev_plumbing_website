@@ -1,13 +1,22 @@
 "use client";
 
 import React from "react";
-import { StyledHeading } from "../styledHeading";
 
 import Copyright from "../copyright";
 import ContactFooter from "../contactFooter";
 import AboutFooter from "../aboutFooter";
 import QuickLinks from "../quickLinks";
 import OpeningHours from "../openingHours";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
+   description: "Emergency Plumbing Edinburgh",
+   robots: {
+      index: true,
+      follow: true,
+   },
+};
 
 const Footer = () => {
    return (

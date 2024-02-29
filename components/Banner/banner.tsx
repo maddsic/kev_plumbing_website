@@ -6,13 +6,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Head from "next/head";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
    title: "Emergency Plumbing Service in Edinburgh and Fife",
    description:
       "Dunedin Plumbing and Heating offers reliable plumbing services in Edinburgh and Fife. From installations to repairs, trust our experienced team for all your plumbing needs.",
+   robots: {
+      index: true,
+      follow: true,
+   },
 };
 
 export const Banner = () => {

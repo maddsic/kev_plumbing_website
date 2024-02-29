@@ -58,7 +58,7 @@ const Navbar = () => {
                      src="/logo.png"
                      alt="Dunedin Logo"
                      fill
-                     className="object-cover shadow-2xl"
+                     className="object-cover shadow-lg"
                   />
                </div>
             </Link>
