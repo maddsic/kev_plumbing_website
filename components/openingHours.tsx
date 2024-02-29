@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { MdAccessTime } from "react-icons/md";
 

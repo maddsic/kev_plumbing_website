@@ -4,7 +4,6 @@ import { BookCheck, Hammer, Home, Truck } from "lucide-react";
 
 import styles from "./about.module.scss";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { StyledHeading } from "../styledHeading";
@@ -20,6 +19,10 @@ export const metadata: Metadata = {
    title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
    description:
       "Learn about Dunedine Plumbing and Heating history, mission, and team. Trust our experienced plumbers for all your plumbing needs in Edinburgh and Fife",
+   robots: {
+      index: true,
+      follow: true,
+   },
 };
 
 const list = [

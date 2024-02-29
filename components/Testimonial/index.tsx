@@ -12,7 +12,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
    title: "Customer Testimonials - Dunedin Plumbing and Heating",
    description:
-      "Read what our satisfied customers have to say about their experienceDunedin Plumbing and Heating. Trust our team for reliable plumbing services in Edinburgh and Fife.",
+      "Read what our satisfied customers have to say about their experienceDunedin Plumbing and Heating. Trust our team for reliable plumbing services in Edinburgh and Fife. Emergency Plumbing Edinburgh",
+   robots: {
+      index: true,
+      follow: true,
+   },
 };
 
 const Testimonials = () => {

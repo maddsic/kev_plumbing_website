@@ -8,7 +8,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
    title: "Plumbing Services in Edinburgh and Fife - Installation, Repair, Maintenance",
    description:
-      "Dunedin Plumbing and Heating offers comprehensive plumbing services in Edinburgh and Fife, including installation, repair, and maintenance. Contact us for expert plumbing solutions.",
+      "Dunedin Plumbing and Heating offers comprehensive plumbing services in Edinburgh and Fife, including installation, repair, and maintenance. Contact us for expert plumbing solutions. Emergency Plumbing Edinburgh",
+   robots: {
+      index: true,
+      follow: true,
+   },
 };
 
 const Services = () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Map from "../map";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,7 +14,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
    title: "Contact Dunedin Plumbing and Heating - Get in Touch Today",
    description:
-      "Contact Dunedin Plumbing and Heating for all your plumbing needs in Edinburgh and Fife. Call us at 07400847374 or email enquires@dunedinplumbing.co.uk to schedule service.",
+      "Contact Dunedin Plumbing and Heating for all your plumbing needs in Edinburgh and Fife. Call us at 07400847374 or email enquires@dunedinplumbing.co.uk to schedule service. Emergency Plumbing Edinburgh",
+   robots: {
+      index: true,
+      follow: true,
+   },
 };
 
 type formValues = z.infer<typeof ContactSchema>;

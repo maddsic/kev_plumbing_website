@@ -1,5 +1,5 @@
-import { navLinks } from "@/constants/navlinks";
-import Link from "next/link";
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 

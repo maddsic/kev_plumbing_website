@@ -3,6 +3,17 @@ import { motion } from "framer-motion";
 import { ShowerHead, Users, Home } from "lucide-react";
 import { Heading } from "../heading";
 import { StyledHeading } from "../styledHeading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+   title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
+   description:
+      "Learn about Dunedine Plumbing and Heating history, mission, and team. Trust our experienced plumbers for all your plumbing needs in Edinburgh and Fife. Emergency Plumbing Edinburgh",
+   robots: {
+      index: true,
+      follow: true,
+   },
+};
 
 const chooseData = [
    {

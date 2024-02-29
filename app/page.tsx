@@ -29,24 +29,24 @@ export default function Home() {
 
    useEffect(() => {
       // Check if the component is mounted
-      let isMounted: Boolean = true;
+      // let isMounted: Boolean = true;
 
-      id.current = window.setInterval(() => {
-         setTimer(timer => timer - 1);
-      }, 1000);
+      // id.current = window.setInterval(() => {
+      //    setTimer(timer => timer - 1);
+      // }, 1000);
 
       // Set a timeout to clear the loader after 3 seconds
-      setTimeout(() => {
-         if (isMounted) {
-            clear();
-         }
+      const time = setTimeout(() => {
+         setPreloader(false);
       }, 3000);
 
+      // return clearTimeout(time);
+
       // Cleanup function to handle unmounting
-      return () => {
-         isMounted = false;
-         window.clearInterval(id.current);
-      };
+      // return () => {
+      //    isMounted = false;
+      //    window.clearInterval(id.current);
+      // };
    }, []);
 
    return (

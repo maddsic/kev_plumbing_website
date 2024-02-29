@@ -1,9 +1,10 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
 const Loader = () => {
    return (
-      <div className="loader-wrapper absolute top-0 right-0 bottom-0 left-0 bg-black z-1 p-2 md:p-0">
+      <div className="loader-wrapper absolute top-0 right-0 bottom-0 left-0 bg-black z-1">
          <div className="logo">
             <Image
                src="/logo.png"

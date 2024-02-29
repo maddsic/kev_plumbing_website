@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
    title: {
-      default: "Dunedin",
+      default: "Dunedin Plumbing and Heating",
       template: "%s - Dunedin Plumbing & Heating",
    },
    description: "Welcome to Dunedin Plumbing and Heating",
