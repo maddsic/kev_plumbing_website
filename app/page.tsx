@@ -31,13 +31,11 @@ export default function Home() {
       id.current = window.setInterval(() => {
          setTimer(timer => timer - 1);
       }, 1000);
-   }, []);
 
-   useEffect(() => {
-      if (timer === 0) {
+      setTimeout(() => {
          clear();
-      }
-   }, [timer]);
+      }, 3000);
+   }, []);
 
    return (
       <>
