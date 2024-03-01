@@ -18,21 +18,21 @@ export const metadata: Metadata = {
 const chooseData = [
    {
       icon: ShowerHead,
-      title: "24/7 Service",
+      title: "Experienced Technicians",
       description:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+         "Our team consists of experienced plumbers who specialize in spa maintenance.",
    },
    {
       icon: Users,
-      title: "Free Consultation",
+      title: "Quality Workmanship",
       description:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+         "We take pride in delivering high-quality workmanship and lasting solutions.",
    },
    {
       icon: Home,
-      title: "Affordable Pricing",
+      title: "Affordable Rates",
       description:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+         " Our competitive rates make professional plumbing maintenance accessible to all",
    },
 ];
 
