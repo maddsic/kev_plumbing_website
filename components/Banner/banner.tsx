@@ -26,7 +26,7 @@ export const Banner = () => {
          setCurrentSlide(prevSlide =>
             prevSlide === slider.length - 1 ? 0 : prevSlide + 1
          );
-      }, 20000);
+      }, 10000);
       return () => clearTimeout(time);
    }, [currentSlide]);
 
@@ -36,7 +36,7 @@ export const Banner = () => {
       backgroundSize: "cover",
       height: "100%",
       maxWidth: "100%",
-      transition: " 0.5s ease-in-out",
+      transition: " 0.15s ease-in-out",
    };
 
    useEffect(() => {

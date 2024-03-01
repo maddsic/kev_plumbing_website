@@ -1,6 +1,6 @@
 const slider = [
    {
-      url: "/tap1.jpg",
+      url: "/bg4.jpg",
       alt: "slider images",
       title: "Quality Plumbing, Affordable Price",
       subtitle: "Get Your Free Estimates today at no cost",
