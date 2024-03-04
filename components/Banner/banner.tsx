@@ -1,12 +1,12 @@
 "use client";
 
-import slider from "@/constants/slider";
 import { useEffect, useState } from "react";
+import { Metadata } from "next";
+import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Button } from "../ui/button";
-import Link from "next/link";
-import { Metadata } from "next";
+import slider from "@/constants/slider";
 
 export const metadata: Metadata = {
    title: "Emergency Plumbing Service in Edinburgh and Fife",

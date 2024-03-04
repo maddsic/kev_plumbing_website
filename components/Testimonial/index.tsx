@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const Testimonials = () => {
    return (
-      <main id="testimonials" className="section__container my-auto">
+      <main id="testimonials" className="section__container my-auto relative">
          <motion.section
             className="app__wrapper max-w-[80%] mx-auto text-center my-auto"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
