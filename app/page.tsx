@@ -12,41 +12,16 @@ import ContactPage from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/scrollToTop";
 import CookiesConcent from "./cookiesConcent";
-import NavigationDots from "@/components/navigationDots";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "@/components/loader";
 
 export default function Home() {
    const [preloader, setPreloader] = useState(true);
-   const [timer, setTimer] = useState<number>(3);
-   const id: any = useRef(null);
-
-   const clear = () => {
-      setPreloader(false);
-      window.clearInterval(id.current);
-   };
 
    useEffect(() => {
-      // Check if the component is mounted
-      // let isMounted: Boolean = true;
-
-      // id.current = window.setInterval(() => {
-      //    setTimer(timer => timer - 1);
-      // }, 1000);
-
-      // Set a timeout to clear the loader after 3 seconds
       const time = setTimeout(() => {
          setPreloader(false);
       }, 3000);
-
-      // return clearTimeout(time);
-
-      // Cleanup function to handle unmounting
-      // return () => {
-      //    isMounted = false;
-      //    window.clearInterval(id.current);
-      // };
    }, []);
 
    return (

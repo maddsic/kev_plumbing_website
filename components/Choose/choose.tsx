@@ -20,7 +20,7 @@ const chooseData = [
       icon: ShowerHead,
       title: "Experienced Technicians",
       description:
-         "Our team consists of experienced plumbers who specialize in spa maintenance.",
+         "Our team consists of experienced plumbers who specialize in plumbing works & maintenance.",
    },
    {
       icon: Users,
@@ -59,7 +59,7 @@ const Choose = () => {
                {chooseData.map((choose, index) => (
                   <div
                      key={index}
-                     className="mb-3 group hover:-translate-y-6 transition duration-1000 relative max-w-[320px] rounded-[20px] bg-[#1667ae] px-10 py-8 text-center shadow-2xl"
+                     className="mb-3 group hover:-translate-y-6 transition duration-1000 relative max-w-[320px] rounded-[20px] bg-[#1667ae] px-5 py-8 text-center shadow-2xl"
                   >
                      <div className="group-hover:bg-black flex justify-center items-center absolute -top-[30px] left-[40%] z-20 rounded-full bg-[#2296f9] p-4">
                         <choose.icon size={34} color="white" className="" />

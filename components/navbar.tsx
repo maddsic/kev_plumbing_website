@@ -52,7 +52,11 @@ const Navbar = () => {
             </div>
          </div>
          <div className="flex items-center justify-between px-1 lg:px-3 border bg-white">
-            <Link href="/" className="logo lg:w-[30%] cursor-pointer">
+            <Link
+               href="/"
+               rel="preload"
+               className="logo lg:w-[30%] cursor-pointer"
+            >
                <div className="relative z-50 w-20 h-24 md:w-24 md:h-24 rounded">
                   <Image
                      src="/logo.png"
