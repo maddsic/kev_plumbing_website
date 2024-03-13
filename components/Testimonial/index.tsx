@@ -32,7 +32,10 @@ const Testimonials = () => {
                   title="WHAT OUR CLIENTS THINK"
                   classNames="text-blue-500"
                />
-               <Heading title="Our Testimonials" classNames="text-gray-950" />
+               {/* <Heading title="Our Testimonials" classNames="text-gray-950" /> */}
+               <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] lg:mb-3 text-center">
+                  Our Testimonials
+               </h3>
                <p className="text-gray-500">
                   We love our clients and they love our work. Our team is very
                   experienced in both residential and commercial projects

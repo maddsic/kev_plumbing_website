@@ -43,10 +43,9 @@ const Project = () => {
          >
             <div className="max-w-1/2 mx-auto">
                <StyledHeading title="Our Work" classNames="text-blue-500" />
-               <h2 className="head-text mt-3">
-                  Our Latest
-                  <span className="text-blue-700"> Projects</span>
-               </h2>
+               <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] lg:mb-3 text-center capitalize">
+                  Our latest projects
+               </h3>
             </div>
 
             <div className="p-0 flex justify-center items-start flex-wrap mt-[1rem] w-full mx-auto">
@@ -73,7 +72,7 @@ const Project = () => {
                      <Image
                         alt={project.description}
                         src={project.image}
-                        className="w-[100%] h-[190px] rounded-[20px] object-cover"
+                        className="w-[100%] h-[190px] rounded-[20px] object-cover shadow-lg"
                         width={100}
                         height={190}
                         onClick={() => window.open(project.image)}

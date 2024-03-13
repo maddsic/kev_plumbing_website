@@ -1,5 +1,3 @@
-"use client";
-
 import { BookCheck, Hammer, Home, Truck } from "lucide-react";
 
 import styles from "./about.module.scss";
@@ -13,7 +11,8 @@ import { GiHotSurface, GiTap } from "react-icons/gi";
 import { PiToiletLight } from "react-icons/pi";
 import { IoWaterOutline } from "react-icons/io5";
 import { Metadata } from "next";
-import { useRef } from "react";
+import { client, urlFor } from "../../app/lib/sanity";
+import { useEffect, useState } from "react";
 
 export const metadata: Metadata = {
    title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
@@ -25,17 +24,42 @@ export const metadata: Metadata = {
    },
 };
 
-const list = [
-   "Affordable pricing",
-   "24/7 Service",
-   "Free telephone consultation",
-   "Plumbing Experts",
-   "15+ years experience",
-   "Your own locals",
-];
+export const revalidate = 3600;
 
 const About = () => {
-   const aboutRef = useRef<HTMLDivElement | null>(null);
+   const [title, setTitle] = useState<string>("");
+   const [subTitle, setSubtitle] = useState<string>("");
+   const [description, setDescription] = useState<string>("");
+   const [listDescription, setListDescription] = useState<string>("");
+   const [list, setList] = useState<string[]>();
+   const [dataImage, setDataImage] = useState<any>();
+
+   useEffect(() => {
+      async function fetchData() {
+         try {
+            const data = await client.fetch(`*[_type == "about"]{
+            title,
+            subtitle,
+            description,
+            listContent,
+            listDescription,
+            profileImg
+   }`);
+
+            setTitle(data[0].title);
+            setSubtitle(data[0].subtitle);
+            setDescription(data[0].description[0].children[0].text);
+            setListDescription(data[0].listDescription[0].children[0].text);
+            setList(data[0].listContent);
+            setDataImage(data[0].profileImg?.asset?._ref);
+         } catch (error) {}
+      }
+      fetchData();
+   }, []);
+
+   console.log("data image data");
+   // console.log(dataImage.profileImg?.asset?._ref); // this returns data
+
    return (
       <main id="about" className="pb-8 px-4 xs:px-6 sm:px-16 md:px-24 mt-10">
          <motion.section
@@ -44,41 +68,43 @@ const About = () => {
             transition={{ duration: 1 }}
          >
             {/* CONTENT */}
-            <div className="lg:flex justify-around  gap-x-20 max-w-[80%] mx-auto">
+            <div className="lg:flex justify-around gap-x-[8rem] max-w-[80%] mx-auto">
                {/* ASIDE LEFT */}
                <aside className="flex-1 p-0">
                   <figure className="flex items-center justify-center lg:mt-10">
-                     <Image
-                        src="/profile.webp"
-                        alt="About us"
-                        className={cn(
-                           "rounded border shadow-lg flex-1",
-                           styles.img
-                        )}
-                        width={100}
-                        height={70}
-                     />
+                     {dataImage && (
+                        // I decided to use to ! here for type to ignore type checking instead of creating an interface
+                        <Image
+                           src={urlFor(dataImage!).url()}
+                           alt="About Us"
+                           className={cn(
+                              "rounded border shadow-lg flex-1",
+                              styles.img
+                           )}
+                           // loader={() => src}
+                           width={100}
+                           height={70}
+                           priority
+                           quality={100}
+                        />
+                     )}
                   </figure>
                </aside>
-
                {/* ASIDE RIGHT */}
                <aside className="w-full lg:max-w-[60%] lg:p-5 my-20">
                   <div className="flex flex-col my-10 lg:my-5">
                      <StyledHeading
-                        title="ABOUT US"
+                        title={subTitle}
                         classNames="text-[#001733] font-bold"
                      />
                      <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] text-start lg:mb-7">
-                        Plumbing is what we do
+                        {title}
                      </h3>
                      <p className="gray-text leading-8 text-[13px] lg:text-[16px] font-medium">
-                        Dunedin, a historical name for Edinburgh, is a local
-                        company run by a family native to Edinburgh. We take
-                        pride in our fully qualified and highly skilled team,
-                        proficient in multiple trades and expertise.
+                        {description}
                      </p>
                      <div className="lg:grid grid-cols-2 mt-8">
-                        {list.map((item, index) => (
+                        {list?.map((item, index) => (
                            <div
                               key={index}
                               className="flex gap-x-2 items-center justify-start  mb-3 lg:mb-5"
@@ -103,9 +129,7 @@ const About = () => {
                      </div>
                   </div>
                   <p className="gray-text text-[12px] lg:text-[14px] lg:font-medium leading-7">
-                     Whether it&apos;s a small fix or a complete renovation, our
-                     skilled team is equipped to handle it all. Trust us to
-                     tackle any plumbing project with precision and care.
+                     {listDescription}
                   </p>
                   <Button
                      variant="ghost"
@@ -116,60 +140,9 @@ const About = () => {
                   </Button>
                </aside>
             </div>
-            {/* COUNTERS */}
-            <div className="md:flex justify-evenly -mt-10 lg:-mt-0 mb-10 lg:mb-20 md:items-center max-w-[80%] mx-auto">
-               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <PiToiletLight fontSize={60} className="text-sky-700" />
-                  <Counter number={3500} title="Toilets Installed" />
-               </div>
-               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <GiHotSurface fontSize={60} className="text-sky-700" />
-                  <Counter number={1200} title="Heaters Repaired" />
-               </div>
-
-               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <IoWaterOutline fontSize={60} className="text-sky-700" />
-                  <Counter number={2550} title="Burst Mains Repaired" />
-               </div>
-               <div className="flex items-center justify-start lg:justify-center gap-x-4 mb-4">
-                  <GiTap fontSize={60} className="text-sky-700" />
-                  <Counter number={3000} title="Leaky Faucets Fixed" />
-               </div>
-            </div>
          </motion.section>
       </main>
    );
 };
 
 export default About;
-
-{
-   /* <motion.section
-            className="app__wrapper w-full lg:max-w-[80%] mx-auto"
-            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-            transition={{ duration: 1 }}
-         >
-            <div className="boxes__parent flex-wrap items-center justify-center lg:gap-x-3 md:flex ">
-               {data.map((d, dIndex) => (
-                  <div
-                     key={dIndex}
-                     className={cn(
-                        "boxex__child mb-8 lg:mb-3 w-full lg:w-[28%] flex flex-col items-center gap-y-3 group hover:-translate-y-6 transition duration-1000",
-                        styles.highlight__box
-                     )}
-                  >
-                     <div className="icon__container relative">
-                        <span className="circles"></span>
-                        <span className="circles"></span>
-                        <d.icon size={50} color="white" />
-                     </div>
-                     <h4 className="text-2xl">{d.title}</h4>
-
-                     <Link href="#" className="group-hover:text-red-500">
-                        Learn More
-                     </Link>
-                  </div>
-               ))}
-            </div>
-         </motion.section> */
-}

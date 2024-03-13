@@ -4,7 +4,7 @@ import React from "react";
 
 const Loader = () => {
    return (
-      <div className="loader-wrapper absolute top-0 right-0 bottom-0 left-0 bg-black z-1">
+      <div className="loader-wrapper absolute top-0 right-0 bottom-0 left-0 z-1">
          <div className="logo">
             <Image
                src="/logo.png"
@@ -14,11 +14,11 @@ const Loader = () => {
                className="animate-bounce"
             />
          </div>
-         <h1 className="text-2xl font-bold uppercase md:text-[1.5vw] ">
-            Dunedin Plumbing & Heating
+         <h1 className="text-2xl font-bold uppercase lg:text-[1.5vw] ">
+            Dunedin
          </h1>
-         <h2 className="text-base uppercase mt-2 md:text-[1.5vw]">
-            Edinburgh, Uk
+         <h2 className="text-base uppercase mt-2 lg:text-[1.5vw]">
+            Plumbing & Heating
          </h2>
       </div>
    );

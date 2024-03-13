@@ -9,7 +9,7 @@ export const testimonialData = [
       title: "Shantel Auguste",
       content:
          "I recently hired Dunedin Plumbing for a bathroom renovation, and I couldn't be happier with the results. Their attention to detail and professionalism throughout the project were impressive. I'll definitely be using their services again!",
-      image: "/chantel.jpeg",
+      image: "/avatar.jpeg",
    },
    {
       title: "Andrew Fisher",
