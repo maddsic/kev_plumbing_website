@@ -46,6 +46,8 @@ const Services = () => {
       ferchData();
    }, []);
 
+   // hi
+
    return (
       <div id="services" className="app__container">
          <motion.div
