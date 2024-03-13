@@ -6,6 +6,8 @@ import { navLinks } from "@/constants/navlinks";
 import { Facebook, Instagram, Mail, PhoneCall, Twitter } from "lucide-react";
 import MobileNav from "./mobileNav";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { client, urlFor } from "@/app/lib/sanity";
 
 const socialIcons = [
    {
@@ -25,7 +27,37 @@ const socialIcons = [
    },
 ];
 
+// async function getLogo() {
+//    const query = '*[_type == "logo"][0]';
+
+//    try {
+//       const data = await client.fetch(query);
+//       return data;
+//    } catch (error) {
+//       console.log("Whoops something went wrong", error);
+//    }
+// }
+
 const Navbar = () => {
+   const [logoData, setLogoData] = useState(null);
+
+   useEffect(() => {
+      async function fetchData() {
+         try {
+            const data = await client.fetch('*[_type == "logo"][0]');
+            setLogoData(data);
+         } catch (error) {
+            console.error("Error fetching logo data:", error);
+         }
+      }
+      fetchData();
+   }, []);
+   console.log("image url");
+   console.log(logoData);
+
+   // const imageUrlData = urlFor(imageUrl?.image?.asset?._ref);
+   // console.log("image url form navbar", imageUrlData); //here it says undefined so the image is not showing
+
    return (
       <header id="home" className="">
          <div className="hidden lg:flex">
@@ -57,13 +89,17 @@ const Navbar = () => {
                rel="preload"
                className="logo lg:w-[30%] cursor-pointer"
             >
-               <div className="relative z-50 w-20 h-24 md:w-24 md:h-24 rounded">
-                  <Image
-                     src="/logo.png"
-                     alt="Dunedin Logo"
-                     fill
-                     className="object-cover shadow-lg"
-                  />
+               <div className="relative z-50 w-20 h-24 md:w-24 md:h-24 rounded overflow-hidden">
+                  {logoData && (
+                     <Image
+                        src={urlFor(logoData.image.asset._ref).url()}
+                        alt="Dunedin Logo"
+                        fill
+                        priority
+                        // loader={() => src}
+                        className="object-cover shadow-lg"
+                     />
+                  )}
                </div>
             </Link>
 

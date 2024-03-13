@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { serviceData } from "../../constants/services";
 import { motion } from "framer-motion";
 import { Metadata } from "next";
+import { StyledHeading } from "../styledHeading";
+import { Heading } from "../heading";
+import { useEffect, useState } from "react";
+import { client, urlFor } from "@/app/lib/sanity";
 
 export const metadata: Metadata = {
    title: "Plumbing Services in Edinburgh and Fife - Installation, Repair, Maintenance",
@@ -15,7 +18,34 @@ export const metadata: Metadata = {
    },
 };
 
+interface Service {
+   _id: string;
+   title: string;
+   imageurl: {
+      asset: {
+         _ref: string;
+      };
+   };
+}
+
+export const revalidate = 3600;
+
 const Services = () => {
+   const [services, setServices] = useState<Service[]>([]);
+
+   useEffect(() => {
+      async function ferchData() {
+         try {
+            const data: Service[] = await client.fetch(`*[_type == "service"]`);
+            setServices(data);
+            // console.log("service data", data);
+         } catch (error) {
+            // console.log("ERROR from service useEffect", error);
+         }
+      }
+      ferchData();
+   }, []);
+
    return (
       <div id="services" className="app__container">
          <motion.div
@@ -23,19 +53,17 @@ const Services = () => {
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
-            <h3 className="text-[#001733] text-[24px] font-bold md:text-[1.8rem] app__about">
-               I know that <span className="text-blue-700">Good Service</span>
-               <br /> means <span className="text-blue-700">Good Business</span>
-            </h3>
-            {/* <div className="max-w-1/2 mx-auto">
+            <div className="max-w-1/2 mx-auto">
                <StyledHeading
-                  title="Good Service Means Good Business"
+                  title="What we offer"
                   classNames="text-blue-500"
                />
-               <Heading title="Our Testimonials" classNames="text-gray-950" />
-            </div> */}
+               <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] lg:mb-3 text-center capitalize">
+                  Our services
+               </h3>
+            </div>
             <div className="flex justify-center items-start flex-wrap mt-[1rem] container">
-               {serviceData.map((service, sIndex) => (
+               {services?.map((service, sIndex) => (
                   <motion.div
                      key={sIndex}
                      className="w-full md:w-1/3 lg:w-1/4 xl:w-1/5 flex justify-start items-start flex-col m-[1rem]"
@@ -45,8 +73,8 @@ const Services = () => {
                   >
                      <Image
                         alt={service.title}
-                        src={service.image}
-                        className="w-[100%] h-[190px] rounded-[20px] object-cover repeat-0"
+                        src={urlFor(service?.imageurl?.asset._ref).url()}
+                        className="w-[100%] h-[190px] rounded-[20px] object-cover repeat-0 shadow-lg"
                         width={100}
                         height={190}
                      />
@@ -55,7 +83,7 @@ const Services = () => {
                         className="bold-text mt-[20px]"
                         style={{ marginTop: 20 }}
                      >
-                        {service.title}
+                        {service?.title}
                      </h2>
                   </motion.div>
                ))}
@@ -64,8 +92,5 @@ const Services = () => {
       </div>
    );
 };
-
-// pass in the
-// export default AppWrapper(Services, "service");
 
 export default Services;
