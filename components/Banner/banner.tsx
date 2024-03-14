@@ -51,6 +51,7 @@ export const Banner = () => {
       maxWidth: "100%",
       transition: " 0.15s ease-in-out",
    };
+   // hi
 
    useEffect(() => {
       AOS.init({
