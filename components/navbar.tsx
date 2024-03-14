@@ -27,19 +27,16 @@ const socialIcons = [
    },
 ];
 
-// async function getLogo() {
-//    const query = '*[_type == "logo"][0]';
-
-//    try {
-//       const data = await client.fetch(query);
-//       return data;
-//    } catch (error) {
-//       console.log("Whoops something went wrong", error);
-//    }
-// }
+interface LogoData {
+   image: {
+      asset: {
+         _ref: string;
+      };
+   };
+}
 
 const Navbar = () => {
-   const [logoData, setLogoData] = useState(null);
+   const [logoData, setLogoData] = useState<LogoData | null>(null);
 
    useEffect(() => {
       async function fetchData() {
@@ -52,8 +49,8 @@ const Navbar = () => {
       }
       fetchData();
    }, []);
-   console.log("image url");
-   console.log(logoData);
+   // console.log("image url");
+   // console.log(logoData);
 
    // const imageUrlData = urlFor(imageUrl?.image?.asset?._ref);
    // console.log("image url form navbar", imageUrlData); //here it says undefined so the image is not showing
