@@ -76,9 +76,9 @@ const Services = () => {
                      <Image
                         alt={service.title}
                         src={urlFor(service?.imageurl?.asset._ref).url()}
-                        className="w-[100%] h-[190px] rounded-[20px] object-cover repeat-0 shadow-lg"
-                        width={100}
-                        height={190}
+                        className="rounded-[20px] object-cover shadow-lg mx-auto custom-image-height"
+                        width="400"
+                        height="200"
                      />
 
                      <h2

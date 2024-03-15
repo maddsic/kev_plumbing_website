@@ -23,7 +23,7 @@ const Testimonials = () => {
    return (
       <main id="testimonials" className="section__container my-auto relative">
          <motion.section
-            className="app__wrapper max-w-[80%] mx-auto text-center my-auto"
+            className="app__wrapper max-w-[80%] mx-auto lg:my-12 text-center "
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
          >
@@ -53,7 +53,7 @@ const Testimonials = () => {
                      <div className="flex justify-end p-1">
                         <Quote color="gray" fill="gray" />
                      </div>
-                     <CardHeader className="lg:text-md text-start leading gray-text">
+                     <CardHeader className="text-sm text-start leading-relaxed gray-text overflow-hidden">
                         <p>{tes.content}</p>
                      </CardHeader>
 
@@ -63,24 +63,24 @@ const Testimonials = () => {
                               src={tes.image}
                               alt="Testimonials image"
                               className="rounded-full"
-                              width={100}
+                              width={60}
                               height={0}
                            />
                         </div>
 
-                        <div className="flex flex-col items-center justify-center">
-                           <p className="text-md font-bold mb-0 md:md-1">
+                        <div className="flex flex-col items-center justify-center pl-4 md:pl-3">
+                           <p className="text-xs lg:text-sm font-bold mb-0 md:md-1">
                               {tes.title}
                            </p>
-                           <p className="text-gray-500 text-sm mb-2">
+                           <p className="text-gray-500 text-xs mb-2">
                               Happy Client
                            </p>
-                           <div className="flex">
-                              <Star color="yellow" fill="yellow" />
-                              <Star color="yellow" fill="yellow" />
-                              <Star color="yellow" fill="yellow" />
-                              <Star color="yellow" fill="yellow" />
-                              <Star color="yellow" fill="yellow" />
+                           <div className="flex ">
+                              <Star size={15} color="yellow" fill="yellow" />
+                              <Star size={15} color="yellow" fill="yellow" />
+                              <Star size={15} color="yellow" fill="yellow" />
+                              <Star size={15} color="yellow" fill="yellow" />
+                              <Star size={15} color="yellow" fill="yellow" />
                            </div>
                         </div>
                      </CardContent>

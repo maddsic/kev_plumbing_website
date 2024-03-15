@@ -69,13 +69,13 @@ export const Banner = () => {
       <div className="relative w-full h-[400px] lg:h-[700px] overflow-hidden">
          <div style={bgImageStyle} />
          {/* BANNER HIGHLIGHT */}
-         <div className="absolute top-10 left-0 right-0 bottom-0 flex flex-col items-center text-center py-5 md:py-10 lg:py-24 z-50 text-white">
-            <div className="w-[80%] lg:w-[65%]">
+         <div className="absolute top-20 left-0 right-0 bottom-0 flex flex-col items-center text-center py-5 md:py-10 lg:py-24 z-50 text-white">
+            <div className="max-w-[80%] lg:max-w-[65%]">
                <h1
                   data-aos="fade-down"
                   data-aos-easing="linear"
                   data-aos-duration="1000"
-                  className="capitalize text-2xl md:text-3xl lg:text-5xl font-extrabold mb-5 tracking-wide"
+                  className="capitalize text-3xl md:text-4xl lg:text-5xl font-bold mb-5 tracking-wide"
                >
                   {slider[currentSlide]?.title}
                </h1>
@@ -89,12 +89,12 @@ export const Banner = () => {
                   {slider[currentSlide]?.subtitle}
                </h2>
                {/* button */}
-               <div className="flex justify-center gap-5 mx">
+               <div className="flex justify-center gap-5 md:max-w-[60%] mx-auto ">
                   <Link href="#contact">
                      <Button
                         size="lg"
                         variant="secondary"
-                        className="py-6 text-lg font-bold bg-blue-950 hover:bg-blue-900 cursor-pointer"
+                        className="py-6 text-lg font-bold bg-blue-950 hover:bg-blue-900 cursor-pointer rounded"
                      >
                         Contact US
                      </Button>
@@ -102,7 +102,7 @@ export const Banner = () => {
                   <Link href="#services">
                      <Button
                         size="lg"
-                        className="py-6 text-lg font-bold bg-blue-600"
+                        className="py-6 text-lg font-bold bg-blue-600 rounded"
                      >
                         Services
                      </Button>

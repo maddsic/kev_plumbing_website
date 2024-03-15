@@ -14,7 +14,7 @@ export const testimonialData = [
    {
       title: "Andrew Fisher",
       content:
-         "As a landlord, ensuring the safety of my tenants is my top priority. Dunedin Plumbing's thorough gas safety inspection gave me peace of mind knowing that my property's gas appliances are in proper working condition. Thank you for your reliable service!",
+         "As a landlord, ensuring the safety of my tenants is my top priority. Dunedin Plumbing's thorough gas safety inspection gave me peace of mind knowing that my property's gas appliances are in proper working condition. Thank you for your service!",
       image: "/andy.jpg",
    },
    // {

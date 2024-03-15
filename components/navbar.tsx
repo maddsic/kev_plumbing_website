@@ -86,15 +86,15 @@ const Navbar = () => {
                rel="preload"
                className="logo lg:w-[30%] cursor-pointer"
             >
-               <div className="relative z-50 w-20 h-24 md:w-24 md:h-24 rounded overflow-hidden">
+               <div className="relative z-50 w-20 h-24 md:w-32 md:h-24 rounded overflow-hidden">
                   {logoData && (
                      <Image
                         src={urlFor(logoData.image.asset._ref).url()}
                         alt="Dunedin Logo"
                         fill
                         priority
-                        // loader={() => src}
-                        className="object-cover shadow-lg"
+                        // unoptimized={true}
+                        className="object-cover shadow-2xl"
                      />
                   )}
                </div>

@@ -10,6 +10,7 @@ import { ContactSchema } from "@/validations/schema";
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { Metadata } from "next";
+import { toast } from "react-hot-toast";
 
 export const metadata: Metadata = {
    title: "Contact Dunedin Plumbing and Heating - Get in Touch Today",
@@ -65,6 +66,7 @@ const ContactPage = () => {
             .then(response => {
                console.log("Email: sent successfully", response);
                setMessageSent(true);
+               toast.success("Email sent successfully");
                reset();
                return { success: true, data: response };
             });
@@ -121,7 +123,7 @@ const ContactPage = () => {
                            <input
                               type="text"
                               id="floating_first_name"
-                              className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                              className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                               placeholder=" "
                               {...register("name", {
                                  required: "name is required",
@@ -143,7 +145,7 @@ const ContactPage = () => {
                            <input
                               type="text"
                               id="floating_last_name"
-                              className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                              className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                               placeholder=" "
                               {...register("last_name", {
                                  required: "last name is required!",
@@ -166,7 +168,7 @@ const ContactPage = () => {
                         <input
                            type="email"
                            id="floating_email"
-                           className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                            placeholder=" "
                            {...register("email", {
                               required: "email is required",
@@ -193,7 +195,7 @@ const ContactPage = () => {
                      <textarea
                         id="floating_message"
                         rows={4}
-                        className="block mb-5 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        className="block mb-5 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:text-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Message..."
                         {...register("message", {
                            required: "message is required",
