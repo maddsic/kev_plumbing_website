@@ -27,7 +27,7 @@ const ScrollToTop = () => {
          {showScrollBtn && (
             <FaAngleDoubleUp
                onClick={scrollBackToTop}
-               className="h-[50px] w-[50px] rounded-full border-4 border-red-500 text-sky-500 dark:text-white hover:bg-black hover:text-white cursor-pointer animate-pulse "
+               className="h-[50px] w-[50px] rounded-full border-4 text-blue-700 border-red-500 dark:text-white hover:bg-black hover:text-white cursor-pointer animate-pulse "
             />
          )}
       </div>

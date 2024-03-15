@@ -82,7 +82,7 @@ const About = () => {
                               styles.img
                            )}
                            // loader={() => src}
-                           width={100}
+                           width="400"
                            height={70}
                            priority
                            quality={100}

@@ -15,15 +15,28 @@ import CookiesConcent from "./cookiesConcent";
 import { useEffect, useState } from "react";
 import Loader from "@/components/loader";
 
-export default function Home() {
+const usePreloader = () => {
    const [preloader, setPreloader] = useState(true);
 
    useEffect(() => {
-      const time = setTimeout(() => {
+      // check if localStorage is available
+      const hasLoaderShown = localStorage.getItem("hasLoaderShown");
+      if (hasLoaderShown) {
          setPreloader(false);
-      }, 3000);
+      } else {
+         const timeOut = setTimeout(() => {
+            setPreloader(false);
+            localStorage.setItem("hasLoaderShown", "true");
+         }, 3000);
+         return () => clearTimeout(timeOut);
+      }
    }, []);
 
+   return preloader;
+};
+
+export default function Home() {
+   const preloader = usePreloader();
    return (
       <>
          {preloader ? (
