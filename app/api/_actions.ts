@@ -3,7 +3,6 @@
 import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { ContactSchema } from "@/validations/schema";
-import { useEffect } from "react";
 
 type formValues = z.infer<typeof ContactSchema>;
 
@@ -17,8 +16,8 @@ export async function sendMail(data: formValues) {
    if (result.success) {
       const templateParams = {
          from_name: result?.data?.name,
-         from_email: result?.data?.email,
-         to_name: "Dunedine Plumbing Enterprise",
+         from_email: result?.data?.telephone,
+         to_name: "Dunedine Plumbing & Heating",
          message: result?.data?.message,
       };
 

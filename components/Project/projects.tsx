@@ -39,7 +39,7 @@ const Project = () => {
             const data = await client.fetch('*[_type == "project"]');
             setProjectData(data);
          } catch (error) {
-            console.error("Error fetching PROJECT DATA:", error);
+            console.error("ERROR FETCHING PROJECT DATA:", error);
          }
       }
       fetchData();
