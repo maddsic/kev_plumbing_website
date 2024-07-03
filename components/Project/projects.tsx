@@ -38,7 +38,6 @@ const Project = () => {
          try {
             const data = await client.fetch('*[_type == "project"]');
             setProjectData(data);
-            console.log("Data from Project useEffect: ", data);
          } catch (error) {
             console.error("Error fetching PROJECT DATA:", error);
          }
@@ -58,7 +57,6 @@ const Project = () => {
 
    return (
       <section id="projects" className="app__container ">
-         {/* <div className="absolute bg-[#06080be3] top-[80%] left-0 right-0 bottom-[-40%]"></div> */}
          <motion.main
             className="container app__wrapper lg:my-7 overflow-hidden"
             whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}

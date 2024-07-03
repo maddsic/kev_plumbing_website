@@ -22,11 +22,13 @@ export const metadata: Metadata = {
    },
 };
 
+// Setting types for form
 type formValues = z.infer<typeof ContactSchema>;
 
 const ContactPage = () => {
    const [formData, setFormData] = useState<formValues>();
-   const [messageSent, setMessageSent] = useState(false);
+   const [messageSending, setMessageSending] = useState(false);
+   const [messageSentSuccess, setMessageSentSuccess] = useState(false);
 
    const {
       register,
@@ -47,15 +49,15 @@ const ContactPage = () => {
 
    const onSubmit: SubmitHandler<formValues> = async data => {
       const result = ContactSchema.safeParse(data);
-      console.log(result);
 
       if (result.success) {
          const templateParams = {
             from_name: result?.data?.name,
-            from_email: result?.data?.email,
+            from_email: result?.data?.telephone,
             to_name: "Dunedine Plumbing and Heating",
             message: result?.data?.message,
          };
+         setMessageSending(true);
          emailjs
             .send(
                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
@@ -64,9 +66,12 @@ const ContactPage = () => {
                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             )
             .then(response => {
+               // console.log("isSubmitting:", isSubmitting);
                console.log("Email: sent successfully", response);
-               setMessageSent(true);
                toast.success("Email sent successfully");
+               setMessageSentSuccess(true);
+               setMessageSending(false);
+
                reset();
                return { success: true, data: response };
             });
@@ -101,7 +106,7 @@ const ContactPage = () => {
                      onSubmit={handleSubmit(onSubmit)}
                      className="w-full py-7 md:py-14 px-4 md:px-5 sm:p-10 shadow-2xl"
                   >
-                     {messageSent && (
+                     {messageSentSuccess && (
                         <span className="text-green-700 font-semibold text-2xl flex justify-center mb-2 animate-bounce">
                            Thank you for getting in touch...
                         </span>
@@ -166,23 +171,23 @@ const ContactPage = () => {
                      </div>
                      <div className="relative z-0 mb-5 md:mb-6 w-full group">
                         <input
-                           type="email"
+                           type="text"
                            id="floating_email"
                            className="block py-3 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                            placeholder=" "
-                           {...register("email", {
-                              required: "email is required",
+                           {...register("telephone", {
+                              required: "telephone is required",
                            })}
                         />
                         <label
                            htmlFor="floating_email"
                            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
-                           Email address
+                           Telephone/Mobile
                         </label>
-                        {errors.email?.message && (
+                        {errors.telephone?.message && (
                            <p className="text-sm text-red-500">
-                              {errors.email.message}
+                              {errors.telephone.message}
                            </p>
                         )}
                      </div>
@@ -207,7 +212,6 @@ const ContactPage = () => {
                         </p>
                      )}
                      <button
-                        disabled={isSubmitting}
                         type="submit"
                         className="md:mt-10 p-10 flex items-center justify-center text-white bg-black hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                      >
@@ -227,10 +231,13 @@ const ContactPage = () => {
                               />
                            </svg>
                         </span>{" "}
-                        {isSubmitting && (
-                           <span className="spinner-border spinner-border-sm mr-1"></span>
+                        {messageSending ? (
+                           <span className="spinner-border spinner-border-sm mr-1">
+                              Sending...
+                           </span>
+                        ) : (
+                           <span>Submit</span>
                         )}
-                        Submit
                      </button>
                   </form>
                   {/* FORM */}
