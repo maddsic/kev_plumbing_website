@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { StyledHeading } from "../styledHeading";
-import { Heading } from "../heading";
-import { testimonialData } from "@/constants/testimonials";
-import { Card, CardContent, CardHeader } from "../ui/card";
-import { Quote, Star } from "lucide-react";
-import { Metadata } from "next";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { StyledHeading } from '../styledHeading';
+import { Heading } from '../heading';
+import { testimonialData } from '@/constants/testimonials';
+import { Card, CardContent, CardHeader } from '../ui/card';
+import { Quote, Star } from 'lucide-react';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Customer Testimonials - Dunedin Plumbing and Heating",
+  title: 'Customer Testimonials - Dunedin Plumbing and Heating',
   description:
-    "Read what our satisfied customers have to say about their experienceDunedin Plumbing and Heating. Trust our team for reliable plumbing services in Edinburgh and Fife. Emergency Plumbing Edinburgh",
+    'Read what our satisfied customers have to say about their experienceDunedin Plumbing and Heating. Trust our team for reliable plumbing services in Edinburgh and Fife. Emergency Plumbing Edinburgh',
   robots: {
     index: true,
     follow: true,
@@ -21,69 +21,73 @@ export const metadata: Metadata = {
 
 const Testimonials = () => {
   return (
-    <main id="testimonials" className="section__container my-auto relative">
+    <main id="testimonials" className="relative py-24 bg-slate-50">
       <motion.section
-        className="app__wrapper w-full md:max-w-[80%] mx-auto lg:my-12 text-center"
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-6 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
       >
-        <div className="max-w-1/2 mx-auto">
-          <StyledHeading
-            title="WHAT OUR CLIENTS THINK"
-            classNames="text-blue-500"
-          />
-          <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] lg:mb-3 text-center">
-            Our Testimonials
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <StyledHeading title="What our clients think" classNames="text-blue-600" />
+          <h3 className="text-[#001733] text-3xl md:text-5xl font-extrabold tracking-tight mt-3">
+            Testimonials
           </h3>
-          <p className="text-gray-500">
-            We love our clients and they love our work. Our team is very
-            experienced in both residential and commercial projects
+          <p className="mt-4 text-slate-600">
+            We’re proud of the trust our clients place in us for both residential and commercial
+            plumbing services.
           </p>
         </div>
 
-        {/* content */}
-        <div className="mt-10 grid p-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-3 ">
-          {/* <section className=""> */}
-          {testimonialData.map((tes, tesIndex) => (
-            <Card
-              key={tesIndex}
-              className="w-full mb-3 shadow-lg hover:shadow-md rounded-2xl md:p-0 sm:p-8 overflow-hidden"
+        {/* Testimonials Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonialData.map((tes, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="
+            relative bg-white rounded-3xl
+            p-8 shadow-md hover:shadow-xl
+            transition-shadow
+          "
             >
-              <div className="flex justify-end p-1">
-                <Quote color="gray" fill="gray" />
+              {/* Quote Icon */}
+              <div className="absolute top-6 right-6 text-blue-100">
+                <Quote size={32} />
               </div>
-              <CardHeader className="text-sm text-start leading-relaxed gray-text overflow-hidden">
-                <p>{tes.content}</p>
-              </CardHeader>
 
-              <CardContent className="flex">
-                <div className="img rounded-full border border-gray-500 p-2">
+              {/* Content */}
+              <p className="text-slate-700 text-sm leading-relaxed mb-8">“{tes.content}”</p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className="h-14 w-14 rounded-full overflow-hidden border border-slate-200">
                   <Image
                     src={tes.image}
-                    alt="Testimonials image"
-                    className="rounded-full"
-                    width={60}
-                    height={0}
+                    alt={tes.title}
+                    width={56}
+                    height={56}
+                    className="object-cover"
                   />
                 </div>
 
-                <div className="flex flex-col items-center justify-center pl-4 md:pl-3">
-                  <p className="text-xs lg:text-sm font-bold mb-0 md:md-1">
-                    {tes.title}
-                  </p>
-                  <p className="text-gray-500 text-xs mb-2">Happy Client</p>
-                  <div className="flex">
-                    <Star size={15} color="yellow" fill="yellow" />
-                    <Star size={15} color="yellow" fill="yellow" />
-                    <Star size={15} color="yellow" fill="yellow" />
-                    <Star size={15} color="yellow" fill="yellow" />
-                    <Star size={15} color="yellow" fill="yellow" />
+                <div className="text-left">
+                  <p className="font-semibold text-[#001733]">{tes.title}</p>
+                  <p className="text-xs text-slate-500">Happy Client</p>
+
+                  {/* Rating */}
+                  <div className="flex mt-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
+                    ))}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </motion.div>
           ))}
-          {/* </section> */}
         </div>
       </motion.section>
     </main>
