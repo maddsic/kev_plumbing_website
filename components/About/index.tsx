@@ -1,20 +1,20 @@
-import { BookCheck } from "lucide-react";
+import { BookCheck } from 'lucide-react';
 
-import styles from "./about.module.scss";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { StyledHeading } from "../styledHeading";
-import { Button } from "../ui/button";
+import styles from './about.module.scss';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { StyledHeading } from '../styledHeading';
+import { Button } from '../ui/button';
 
-import { Metadata } from "next";
-import { client, urlFor } from "../../app/lib/sanity";
-import { useEffect, useState } from "react";
+import { Metadata } from 'next';
+import { client, urlFor } from '../../app/lib/sanity';
+import { useEffect, useState } from 'react';
 
 export const metadata: Metadata = {
-  title: "About Dunedine Plumbing and Heating - Your Trusted Local Plumbers",
+  title: 'About Dunedine Plumbing and Heating - Your Trusted Local Plumbers',
   description:
-    "Learn about Dunedine Plumbing and Heating history, mission, and team. Trust our experienced plumbers for all your plumbing needs in Edinburgh and Fife",
+    'Learn about Dunedine Plumbing and Heating history, mission, and team. Trust our experienced plumbers for all your plumbing needs in Edinburgh and Fife',
   robots: {
     index: true,
     follow: true,
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 const About = () => {
-  const [title, setTitle] = useState<string>("");
-  const [subTitle, setSubtitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [listDescription, setListDescription] = useState<string>("");
+  const [title, setTitle] = useState<string>('');
+  const [subTitle, setSubtitle] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
+  const [listDescription, setListDescription] = useState<string>('');
   const [list, setList] = useState<string[]>();
   const [dataImage, setDataImage] = useState<any>();
 
@@ -49,90 +49,81 @@ const About = () => {
         setListDescription(data[0].listDescription[0].children[0].text);
         setList(data[0].listContent);
         setDataImage(data[0].profileImg?.asset?._ref);
-      } catch (error) {}
+      } catch (error) {
+        console.error('ERROR FETCHING ABOUT DATA:', error);
+      }
     }
     fetchData();
   }, []);
 
-  console.log("data image data");
+  console.log('data image data');
 
   return (
-    <main id="about" className="pb-8 px-4 xs:px-6 sm:px-16 md:px-24 mt-10">
+    <main id="about" className="relative py-24 bg-white">
       <motion.section
-        className=""
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-6"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
       >
-        {/* CONTENT */}
-        <div className="lg:flex justify-around gap-x-[8rem] max-w-[80%] mx-auto">
-          {/* ASIDE LEFT */}
-          <aside className="flex-1 p-0">
-            <figure className="flex items-center justify-center lg:mt-10">
-              {dataImage && (
-                // I decided to use to ! here for type to ignore type checking instead of creating an interface
+        <div className="grid gap-16 lg:grid-cols-2 items-center">
+          {/* Image */}
+          <div className="relative max-w-lg mx-auto lg:mx-0">
+            {dataImage && (
+              <div className="rounded-3xl overflow-hidden shadow-lg">
                 <Image
                   src={urlFor(dataImage!).url()}
-                  alt="About Us"
-                  className={cn("rounded border shadow-lg flex-1", styles.img)}
-                  width="400"
-                  height={70}
+                  alt="About us"
+                  width={520}
+                  height={380}
+                  className="object-cover"
                   priority
-                  quality={100}
+                  quality={90}
                 />
-              )}
-            </figure>
-          </aside>
-          {/* ASIDE RIGHT */}
-          <aside className="w-full lg:max-w-[60%] lg:p-5 my-20">
-            <div className="flex flex-col my-10 lg:my-5">
-              <StyledHeading
-                title={subTitle}
-                classNames="text-[#001733] font-bold"
-              />
-              <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] text-start lg:mb-7">
-                {title}
-              </h3>
-              <p className="gray-text leading-8 text-[13px] lg:text-[16px] font-medium">
-                {description}
-              </p>
-              <div className="lg:grid grid-cols-2 mt-8">
-                {list?.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-x-2 items-center justify-start  mb-3 lg:mb-5"
-                  >
-                    <BookCheck color="red" size={15} />
-                    <motion.li
-                      whileHover={{
-                        scale: 1.1,
-                        originX: 0,
-                        color: "#000000",
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                      }}
-                      className="gray-text text-[12px] lg:text-sm list-none"
-                    >
-                      {item}
-                    </motion.li>
-                  </div>
-                ))}
               </div>
-            </div>
-            <p className="gray-text text-[12px] lg:text-[14px] lg:font-medium leading-7">
-              {listDescription}
-            </p>
+            )}
+          </div>
+
+          {/* Content */}
+          <div>
+            <StyledHeading title={subTitle} classNames="text-blue-600 font-semibold" />
+
+            <h3 className="text-[#001733] text-3xl md:text-5xl font-extrabold tracking-tight mt-3 mb-6">
+              {title}
+            </h3>
+
+            <p className="text-slate-600 leading-7 mb-8">{description}</p>
+
+            {/* Feature List */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10">
+              {list?.map((item, index) => (
+                <li key={index} className="flex items-start gap-3 text-slate-700 text-sm">
+                  <BookCheck size={18} className="text-blue-600 mt-1" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-slate-600 text-sm leading-7 mb-10">{listDescription}</p>
+
+            {/* CTA */}
             <a href="#contact">
               <Button
-                variant="ghost"
-                className="bg-blue-500 hover:bg-sky-500 text-white mt-4 lg:mt-8 font-semibold"
                 size="lg"
+                className="
+              px-10 py-6 rounded-2xl
+              bg-blue-600 text-white
+              font-semibold
+              hover:bg-blue-500
+              transition-all
+              hover:-translate-y-1 hover:shadow-xl
+            "
               >
                 Contact Us
               </Button>
             </a>
-          </aside>
+          </div>
         </div>
       </motion.section>
     </main>

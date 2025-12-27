@@ -1,18 +1,17 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Metadata } from "next";
-import { StyledHeading } from "../styledHeading";
-import { Heading } from "../heading";
-import { useEffect, useState } from "react";
-import { client, urlFor } from "@/app/lib/sanity";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Metadata } from 'next';
+import { StyledHeading } from '../styledHeading';
+import { Heading } from '../heading';
+import { useEffect, useState } from 'react';
+import { client, urlFor } from '@/app/lib/sanity';
 
 export const metadata: Metadata = {
-  title:
-    "Plumbing Services in Edinburgh and Fife - Installation, Repair, Maintenance",
+  title: 'Plumbing Services in Edinburgh and Fife - Installation, Repair, Maintenance',
   description:
-    "Dunedin Plumbing and Heating offers comprehensive plumbing services in Edinburgh and Fife, including installation, repair, and maintenance. Contact us for expert plumbing solutions. Emergency Plumbing Edinburgh",
+    'Dunedin Plumbing and Heating offers comprehensive plumbing services in Edinburgh and Fife, including installation, repair, and maintenance. Contact us for expert plumbing solutions. Emergency Plumbing Edinburgh',
   robots: {
     index: true,
     follow: true,
@@ -50,38 +49,57 @@ const Services = () => {
   // hi
 
   return (
-    <div id="services" className="app__container">
+    <div id="services" className="relative py-20 bg-slate-50">
       <motion.div
-        className="app__wrapper app-flex-row mx-auto"
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-6"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
       >
-        <div className="max-w-1/2 mx-auto">
-          <StyledHeading title="What we offer" classNames="text-blue-500" />
-          <h3 className="text-[#001733] text-[24px] md:text-[42px] font-bold leading-[63px] lg:mb-3 text-center capitalize">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <StyledHeading title="What we offer" classNames="text-blue-600" />
+          <h3 className="text-[#001733] text-3xl md:text-5xl font-extrabold tracking-tight capitalize mt-3">
             Our services
           </h3>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            Reliable plumbing and heating services delivered with speed, care, and craftsmanship.
+          </p>
         </div>
-        <div className="flex justify-center items-start flex-wrap mt-[1rem] md:container">
-          {services?.map((service, sIndex) => (
-            <motion.div
-              key={sIndex}
-              className="w-full md:w-1/3 lg:w-1/4 xl:w-1/5 flex justify-start items-start flex-col m-[1rem]"
-              whileInView={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5, type: "Inertia" }}
-            >
-              <Image
-                alt={service.title}
-                src={urlFor(service?.imageurl?.asset._ref).url()}
-                className="rounded-[20px] object-cover shadow-lg mx-auto custom-image-height"
-                width="400"
-                height="200"
-              />
 
-              <h2 className="bold-text mt-[20px]" style={{ marginTop: 20 }}>
-                {service?.title}
-              </h2>
+        {/* Services Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {services?.map((service, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="
+            group bg-white rounded-3xl overflow-hidden
+            shadow-md hover:shadow-2xl
+            transition-shadow
+          "
+            >
+              {/* Image */}
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  alt={service.title}
+                  src={urlFor(service?.imageurl?.asset._ref).url()}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6 text-center">
+                <h2 className="text-lg font-semibold text-[#001733] mb-2">{service?.title}</h2>
+
+                {/* Optional future-proofing */}
+                {/* <p className="text-sm text-slate-600">
+              Short service description here
+            </p> */}
+              </div>
             </motion.div>
           ))}
         </div>
