@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import slider from '@/constants/slider';
+import slider from '@/app/data/slider';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const SLIDE_INTERVAL = 8000;
 
-export const Banner = () => {
+export const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
