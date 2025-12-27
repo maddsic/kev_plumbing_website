@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { StyledHeading } from '../styledHeading';
-import { projectData } from '../../constants/projects';
+import { StyledHeading } from '../StyledHeading/styledHeading';
+import { projectData } from '../../app/data/projects';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { Button } from '../ui/button';
 import { useCallback, useEffect, useRef, useState } from 'react';

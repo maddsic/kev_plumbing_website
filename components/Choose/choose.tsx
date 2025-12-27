@@ -1,8 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ShowerHead, Users, Home } from 'lucide-react';
-import { Heading } from '../heading';
-import { StyledHeading } from '../styledHeading';
+import { Heading } from '../Heading/heading';
+import { StyledHeading } from '../StyledHeading/styledHeading';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -75,7 +75,7 @@ const Choose = () => {
               bg-white/10 backdrop-blur-md
               border border-white/20
               p-8 text-center
-              shadow-xl
+              shadow-xl 
             "
             >
               {/* Icon */}

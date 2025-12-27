@@ -4,7 +4,7 @@ import styles from './about.module.scss';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { StyledHeading } from '../styledHeading';
+import { StyledHeading } from '../StyledHeading/styledHeading';
 import { Button } from '../ui/button';
 
 import { Metadata } from 'next';

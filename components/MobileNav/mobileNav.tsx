@@ -1,6 +1,6 @@
 'use client';
 
-import { navLinks } from '@/constants/navlinks';
+import { navLinks } from '@/app/data/navlinks';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';

@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { StyledHeading } from '../styledHeading';
-import { Heading } from '../heading';
-import { testimonialData } from '@/constants/testimonials';
+import { StyledHeading } from '../StyledHeading/styledHeading';
+import { Heading } from '../Heading/heading';
+import { testimonialData } from '@/app/data/testimonials';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Quote, Star } from 'lucide-react';
 import { Metadata } from 'next';

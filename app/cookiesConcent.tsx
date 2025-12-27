@@ -1,62 +1,90 @@
-import React from "react";
-import { hasCookie, setCookie } from "cookies-next";
-import Link from "next/link";
-import { v4 as uuidv4 } from "uuid";
-import { motion } from "framer-motion";
+'use client';
 
-export default function CookiesConcent() {
-   const [showConsent, setShowConsent] = React.useState(true);
-   const visitorsId = uuidv4();
+import { useEffect, useState } from 'react';
+import { hasCookie, setCookie } from 'cookies-next';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
-   React.useEffect(() => {
-      setShowConsent(hasCookie("dunedinSecretCookie"));
-   }, []);
+const COOKIE_NAME = 'dunedin_cookie_consent';
 
-   //    Settng user cookie using UUID
-   const acceptCookie = () => {
-      setShowConsent(true);
-      setCookie("dunedinSecretCookie", visitorsId, {});
-   };
+const CookiesConsent = () => {
+  const [visible, setVisible] = useState(false);
 
-   if (showConsent) {
-      return null;
-   }
+  useEffect(() => {
+    if (!hasCookie(COOKIE_NAME)) {
+      setVisible(true);
+    }
+  }, []);
 
-   return (
-      <div className="fixed inset-0 bg-slate-700 bg-opacity-70 z-[5000]">
-         <motion.div
-            initial={{ opacity: 0, y: 700 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="fixed bottom-0 left-0  md:flex md:items-center md:justify-between px-4 py-6 bg-white w-full"
-         >
-            <div className="w-full lg:w-[80%] mx-auto flex flex-col justify-between gap-y-5 lg:flex lg:flex-row ">
-               <span className="text-sm md:text-base gray-text md:mr-16 md:ml-20">
-                  We serve cookies. We use tools, such as cookies, to enable
-                  essential services and functionality on our site and to
-                  collect data on how visitors interact with our site, products
-                  and services. By clicking Accept, you agree to our use of
-                  these tools for advertising, analytics and support.{" "}
-                  <Link href="/" className="underline text-blue-500">
-                     Privacy Policy.
-                  </Link>
-               </span>
-               <div className="flex items-center justify-center gap-5 md:gap-5">
-                  <button
-                     className="bg-gray-800 py-1 px-6 md:py-2 md:px-10 rounded text-white hover:bg-gray-900"
-                     onClick={() => acceptCookie()}
-                  >
-                     Accept
-                  </button>
-                  <button
-                     className="bg-red-800 py-1 px-6 md:py-2 md:px-10 rounded text-white hover:bg-gray-900"
-                     onClick={() => acceptCookie()}
-                  >
-                     Decline
-                  </button>
-               </div>
+  const acceptCookies = () => {
+    setCookie(COOKIE_NAME, 'accepted', { maxAge: 60 * 60 * 24 * 365 });
+    setVisible(false);
+  };
+
+  const declineCookies = () => {
+    setCookie(COOKIE_NAME, 'declined', { maxAge: 60 * 60 * 24 * 365 });
+    setVisible(false);
+  };
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 80, opacity: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="fixed inset-x-0 bottom-0 z-[9999]"
+        >
+          <div className="mx-auto max-w-6xl m-4 rounded-3xl bg-white shadow-2xl border">
+            <div className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between">
+              {/* Text */}
+              <p className="text-sm text-slate-600 leading-relaxed md:max-w-3xl">
+                We use cookies to improve your experience, analyse traffic, and personalise content.
+                By clicking <strong>Accept</strong>, you agree to our use of cookies. Read our{' '}
+                <Link
+                  href="/privacy-policy"
+                  className="text-blue-600 underline hover:text-blue-500"
+                >
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+
+              {/* Actions */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={declineCookies}
+                  className="
+                    px-5 py-2 rounded-xl
+                    border border-slate-300
+                    text-slate-700
+                    hover:bg-slate-100
+                    transition
+                  "
+                >
+                  Decline
+                </button>
+
+                <button
+                  onClick={acceptCookies}
+                  className="
+                    px-6 py-2 rounded-xl
+                    bg-blue-600 text-white
+                    font-semibold
+                    hover:bg-blue-500
+                    transition
+                  "
+                >
+                  Accept
+                </button>
+              </div>
             </div>
-         </motion.div>
-      </div>
-   );
-}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default CookiesConsent;

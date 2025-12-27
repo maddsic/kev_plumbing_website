@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Metadata } from 'next';
-import { StyledHeading } from '../styledHeading';
-import { Heading } from '../heading';
+import { StyledHeading } from '../StyledHeading/styledHeading';
+import { Heading } from '../Heading/heading';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '@/app/lib/sanity';
 
