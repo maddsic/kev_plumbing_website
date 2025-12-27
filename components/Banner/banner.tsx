@@ -34,7 +34,7 @@ export const Banner = () => {
   const slide = slider[currentSlide];
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[80vh] overflow-hidden">
       {/* Background Slider */}
       <AnimatePresence mode="wait">
         <motion.div
